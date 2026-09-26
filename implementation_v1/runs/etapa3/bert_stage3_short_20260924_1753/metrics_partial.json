@@ -1,0 +1,201 @@
+{
+  "run_id": "bert_stage3_short_20260924_1753",
+  "mode": "short",
+  "created_utc": "2026-09-24T20:54:57.055422+00:00",
+  "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+  "split_id": "grouped_v1_seed_20260924",
+  "split_sha256": "aa9c99a79ccccc3655399761c53098f5fd3d770c9aa6c8b68be29c49eba3586b",
+  "config": {
+    "model_id": "neuralmind/bert-base-portuguese-cased",
+    "seed": 20260924,
+    "split_id": "grouped_v1_seed_20260924",
+    "fold": 1,
+    "labels": [
+      "c1",
+      "c234",
+      "c5"
+    ],
+    "max_length": 256,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "benchmark_micro_batches": 12,
+    "short_train_rows": 1024,
+    "short_validation_rows": 512,
+    "short_optimizer_steps": 128,
+    "eval_every_optimizer_steps": 32,
+    "early_stopping_patience_evaluations": 2
+  },
+  "train_rows": 1024,
+  "validation_rows": 512,
+  "holdout_evaluated": false,
+  "versions": {
+    "torch": "2.13.0+rocm10.0.0",
+    "transformers": "4.56.2",
+    "tokenizers": "0.22.1",
+    "openpyxl": "3.1.5"
+  },
+  "gpu": {
+    "name": "AMD Radeon RX 7600",
+    "total_memory_bytes": 8573157376
+  },
+  "history": [
+    {
+      "optimizer_step": 32,
+      "train": {
+        "loss": 1.1377112986519933,
+        "accuracy": 0.3046875,
+        "rows_seen_since_last_eval": 256
+      },
+      "validation": {
+        "loss": 1.0979196866974235,
+        "metrics": {
+          "accuracy": 0.353515625,
+          "macro_f1": 0.27933099925850624,
+          "recall_by_class": {
+            "c1": 0.1103448275862069,
+            "c234": 0.7802197802197802,
+            "c5": 0.12432432432432433
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              16,
+              113,
+              16
+            ],
+            [
+              23,
+              142,
+              17
+            ],
+            [
+              10,
+              152,
+              23
+            ]
+          ]
+        },
+        "rows": 512,
+        "seconds": 11.994
+      }
+    },
+    {
+      "optimizer_step": 64,
+      "train": {
+        "loss": 1.1060197507031262,
+        "accuracy": 0.29296875,
+        "rows_seen_since_last_eval": 256
+      },
+      "validation": {
+        "loss": 1.108821174595505,
+        "metrics": {
+          "accuracy": 0.326171875,
+          "macro_f1": 0.25641931953248126,
+          "recall_by_class": {
+            "c1": 0.8758620689655172,
+            "c234": 0.03296703296703297,
+            "c5": 0.1837837837837838
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              127,
+              4,
+              14
+            ],
+            [
+              148,
+              6,
+              28
+            ],
+            [
+              148,
+              3,
+              34
+            ]
+          ]
+        },
+        "rows": 512,
+        "seconds": 12.035
+      }
+    },
+    {
+      "optimizer_step": 96,
+      "train": {
+        "loss": 1.1011223192326725,
+        "accuracy": 0.359375,
+        "rows_seen_since_last_eval": 256
+      },
+      "validation": {
+        "loss": 1.1017190483398736,
+        "metrics": {
+          "accuracy": 0.37890625,
+          "macro_f1": 0.29338892980254266,
+          "recall_by_class": {
+            "c1": 0.0,
+            "c234": 0.4725274725274725,
+            "c5": 0.5837837837837838
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              0,
+              76,
+              69
+            ],
+            [
+              0,
+              86,
+              96
+            ],
+            [
+              0,
+              77,
+              108
+            ]
+          ]
+        },
+        "rows": 512,
+        "seconds": 12.016
+      }
+    },
+    {
+      "optimizer_step": 128,
+      "train": {
+        "loss": 1.0975852995179594,
+        "accuracy": 0.37890625,
+        "rows_seen_since_last_eval": 256
+      },
+      "validation": {
+        "loss": 1.0992426783777773,
+        "metrics": {
+          "accuracy": 0.375,
+          "macro_f1": 0.2516718792924609,
+          "recall_by_class": {
+            "c1": 0.05517241379310345,
+            "c234": 0.9340659340659341,
+            "c5": 0.07567567567567568
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              8,
+              131,
+              6
+            ],
+            [
+              5,
+              170,
+              7
+            ],
+            [
+              9,
+              162,
+              14
+            ]
+          ]
+        },
+        "rows": 512,
+        "seconds": 12.039
+      }
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "source": "train.xlsx",
+  "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+  "sheet": "train",
+  "headers": [
+    "resp_text",
+    "clarity"
+  ],
+  "rows": 20092,
+  "types": {
+    "resp_text": {
+      "str": 20091,
+      "float": 1
+    },
+    "clarity": {
+      "str": 20092
+    }
+  },
+  "nulls": {},
+  "classes": {
+    "rows": 20092,
+    "counts": {
+      "c1": 6347,
+      "c234": 6853,
+      "c5": 6892
+    },
+    "shares": {
+      "c1": 0.315897,
+      "c234": 0.341081,
+      "c5": 0.343022
+    }
+  },
+  "exact_distinct_texts": 18432,
+  "exact_repeated_groups": 463,
+  "exact_repeated_rows": 2123,
+  "normalized_distinct_texts": 18143,
+  "normalized_repeated_groups": 500,
+  "normalized_repeated_rows": 2449,
+  "conflicting_groups": 316,
+  "conflicting_rows": 1975,
+  "exact_conflicting_groups": 291,
+  "same_normalized_text_majority_ceiling_rows": 19173,
+  "largest_group_rows": 138,
+  "word_count": {
+    "min": 1,
+    "p10": 22.0,
+    "median": 101.0,
+    "p90": 309.0,
+    "p99": 741.0900000000001,
+    "max": 1821
+  },
+  "character_count": {
+    "min": 7,
+    "p10": 163.0,
+    "median": 709.0,
+    "p90": 2122.0,
+    "p99": 5040.360000000001,
+    "max": 12125
+  },
+  "bertimbau_token_count_with_special_tokens": {
+    "min": 4,
+    "p10": 43.0,
+    "median": 182.0,
+    "p90": 534.9000000000015,
+    "p99": 1293.3600000000006,
+    "max": 4429
+  },
+  "over_256_bertimbau_tokens": 7204,
+  "over_512_bertimbau_tokens": 2174,
+  "quality_flags": {
+    "blank_after_strip": 0,
+    "leading_or_trailing_whitespace": 20091,
+    "repeated_internal_whitespace": 17080,
+    "contains_html_tag": 0,
+    "contains_url": 7936,
+    "contains_email": 2175,
+    "contains_control_character": 5919,
+    "at_most_5_words": 252,
+    "over_512_words": 573
+  },
+  "holdout": {
+    "rows": 3024,
+    "counts": {
+      "c1": 952,
+      "c234": 1036,
+      "c5": 1036
+    },
+    "shares": {
+      "c1": 0.314815,
+      "c234": 0.342593,
+      "c5": 0.342593
+    }
+  },
+  "development": {
+    "rows": 17068,
+    "counts": {
+      "c1": 5395,
+      "c234": 5817,
+      "c5": 5856
+    },
+    "shares": {
+      "c1": 0.316089,
+      "c234": 0.340813,
+      "c5": 0.343098
+    }
+  },
+  "holdout_size_error": 0.0005076647421859426,
+  "holdout_max_class_share_error": 0.0015115653180554633,
+  "holdout_candidate": 37,
+  "folds": [
+    {
+      "fold": 1,
+      "train": {
+        "rows": 11488,
+        "counts": {
+          "c1": 3637,
+          "c234": 3927,
+          "c5": 3924
+        },
+        "shares": {
+          "c1": 0.316591,
+          "c234": 0.341835,
+          "c5": 0.341574
+        }
+      },
+      "validation": {
+        "rows": 5580,
+        "counts": {
+          "c1": 1758,
+          "c234": 1890,
+          "c5": 1932
+        },
+        "shares": {
+          "c1": 0.315054,
+          "c234": 0.33871,
+          "c5": 0.346237
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "train": {
+        "rows": 11451,
+        "counts": {
+          "c1": 3663,
+          "c234": 3901,
+          "c5": 3887
+        },
+        "shares": {
+          "c1": 0.319885,
+          "c234": 0.340669,
+          "c5": 0.339446
+        }
+      },
+      "validation": {
+        "rows": 5617,
+        "counts": {
+          "c1": 1732,
+          "c234": 1916,
+          "c5": 1969
+        },
+        "shares": {
+          "c1": 0.30835,
+          "c234": 0.341107,
+          "c5": 0.350543
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "train": {
+        "rows": 11197,
+        "counts": {
+          "c1": 3490,
+          "c234": 3806,
+          "c5": 3901
+        },
+        "shares": {
+          "c1": 0.311691,
+          "c234": 0.339912,
+          "c5": 0.348397
+        }
+      },
+      "validation": {
+        "rows": 5871,
+        "counts": {
+          "c1": 1905,
+          "c234": 2011,
+          "c5": 1955
+        },
+        "shares": {
+          "c1": 0.324476,
+          "c234": 0.342531,
+          "c5": 0.332993
+        }
+      }
+    }
+  ],
+  "leakage_checks": {
+    "holdout_group_overlap": 0,
+    "fold_group_overlap": [
+      0,
+      0,
+      0
+    ],
+    "all_rows_assigned_once_to_holdout_or_development": true,
+    "each_development_row_validated_once": true
+  },
+  "representative_examples": [
+    {
+      "tipo": "mais_curto",
+      "row_index": 2834,
+      "excel_row": 2836,
+      "label": "c5",
+      "word_count": 1,
+      "excerpt_masked": "Prezado,"
+    },
+    {
+      "tipo": "mais_longo",
+      "row_index": 14344,
+      "excel_row": 14346,
+      "label": "c234",
+      "word_count": 1821,
+      "excerpt_masked": "Prezado Sr., A incidência da Lei nº 12.527/2011 (Lei de Acesso à Informação LAI) a FURNAS, na qualidade desociedades de economia mista, vem prevista em seu art. 1º, parágrafo único"
+    },
+    {
+      "tipo": "mediano_c1",
+      "row_index": 3825,
+      "excel_row": 3827,
+      "label": "c1",
+      "word_count": 111,
+      "excerpt_masked": "Sua demanda foi trabalhada pela Ouvidoria do Complexo HUPES, que, em contato Divisão de Gestão de pessoas deu a seguinte resposta: o Concurso Público da EBSERH Nº 04/2014, dispôs e"
+    },
+    {
+      "tipo": "mediano_c234",
+      "row_index": 199,
+      "excel_row": 201,
+      "label": "c234",
+      "word_count": 112,
+      "excerpt_masked": "O Serviço de Informações ao Cidadão (SIC) da Agência Nacional de Energia Elétrica ANEEL agradece o contato e informa que segue anexa cópia do documento 48542.001776/2018-00. Quanto"
+    },
+    {
+      "tipo": "mediano_c5",
+      "row_index": 242,
+      "excel_row": 244,
+      "label": "c5",
+      "word_count": 87,
+      "excerpt_masked": "Prezado Senhor Ricardo, A base de dados do PIB dos Municípios - referência 2010 compreende os anos 2002 a 2014 e, e a base de dados da referência anterior - 2002 - compreende os an"
+    },
+    {
+      "tipo": "conflito",
+      "row_index": 0,
+      "excel_row": 2,
+      "label": "c5",
+      "word_count": 320,
+      "excerpt_masked": "Prezado(a) Senhor(a), Esclarecemos que o Serviço de Informação ao Cidadão (SIC) não trata de sugestão, elogio, solicitação, reclamação e denúncia relacionados a objetos postados no"
+    }
+  ],
+  "elapsed_seconds": 8.544
+}

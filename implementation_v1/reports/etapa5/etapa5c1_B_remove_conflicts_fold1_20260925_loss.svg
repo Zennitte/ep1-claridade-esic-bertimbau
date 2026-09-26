@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="35" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">start512_lr2e5: loss por passo</text>
+<line x1="90" y1="455.0" x2="845" y2="455.0" stroke="#e8edf2"/>
+<text x="78" y="460.0" text-anchor="end" font-family="Arial" font-size="13">0.966</text>
+<line x1="90" y1="378.0" x2="845" y2="378.0" stroke="#e8edf2"/>
+<text x="78" y="383.0" text-anchor="end" font-family="Arial" font-size="13">0.994</text>
+<line x1="90" y1="301.0" x2="845" y2="301.0" stroke="#e8edf2"/>
+<text x="78" y="306.0" text-anchor="end" font-family="Arial" font-size="13">1.022</text>
+<line x1="90" y1="224.0" x2="845" y2="224.0" stroke="#e8edf2"/>
+<text x="78" y="229.0" text-anchor="end" font-family="Arial" font-size="13">1.050</text>
+<line x1="90" y1="147.0" x2="845" y2="147.0" stroke="#e8edf2"/>
+<text x="78" y="152.0" text-anchor="end" font-family="Arial" font-size="13">1.078</text>
+<line x1="90" y1="70.0" x2="845" y2="70.0" stroke="#e8edf2"/>
+<text x="78" y="75.0" text-anchor="end" font-family="Arial" font-size="13">1.106</text>
+<line x1="90.0" y1="70" x2="90.0" y2="455" stroke="#f1f3f5"/>
+<text x="90.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">3.8e+02</text>
+<line x1="241.0" y1="70" x2="241.0" y2="455" stroke="#f1f3f5"/>
+<text x="241.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">8.2e+02</text>
+<line x1="392.0" y1="70" x2="392.0" y2="455" stroke="#f1f3f5"/>
+<text x="392.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">1.3e+03</text>
+<line x1="543.0" y1="70" x2="543.0" y2="455" stroke="#f1f3f5"/>
+<text x="543.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">1.7e+03</text>
+<line x1="694.0" y1="70" x2="694.0" y2="455" stroke="#f1f3f5"/>
+<text x="694.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">2.1e+03</text>
+<line x1="845.0" y1="70" x2="845.0" y2="455" stroke="#f1f3f5"/>
+<text x="845.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">2.6e+03</text>
+<line x1="90" y1="455" x2="845" y2="455" stroke="#34495e" stroke-width="2"/>
+<line x1="90" y1="70" x2="90" y2="455" stroke="#34495e" stroke-width="2"/>
+<polyline points="90.0,109.1 222.9,172.0 355.7,199.2 401.1,234.1 488.6,376.9 621.5,359.4 754.3,422.9 845.0,339.7" fill="none" stroke="#1769aa" stroke-width="3"/>
+<circle cx="90.0" cy="109.1" r="5" fill="#1769aa"/>
+<circle cx="222.9" cy="172.0" r="5" fill="#1769aa"/>
+<circle cx="355.7" cy="199.2" r="5" fill="#1769aa"/>
+<circle cx="401.1" cy="234.1" r="5" fill="#1769aa"/>
+<circle cx="488.6" cy="376.9" r="5" fill="#1769aa"/>
+<circle cx="621.5" cy="359.4" r="5" fill="#1769aa"/>
+<circle cx="754.3" cy="422.9" r="5" fill="#1769aa"/>
+<circle cx="845.0" cy="339.7" r="5" fill="#1769aa"/>
+<circle cx="90" cy="518" r="5" fill="#1769aa"/>
+<text x="102" y="523" font-family="Arial" font-size="13">Treino</text>
+<polyline points="90.0,141.0 222.9,138.0 355.7,178.6 401.1,119.5 488.6,113.0 621.5,159.8 754.3,102.1 845.0,180.8" fill="none" stroke="#e07a26" stroke-width="3"/>
+<circle cx="90.0" cy="141.0" r="5" fill="#e07a26"/>
+<circle cx="222.9" cy="138.0" r="5" fill="#e07a26"/>
+<circle cx="355.7" cy="178.6" r="5" fill="#e07a26"/>
+<circle cx="401.1" cy="119.5" r="5" fill="#e07a26"/>
+<circle cx="488.6" cy="113.0" r="5" fill="#e07a26"/>
+<circle cx="621.5" cy="159.8" r="5" fill="#e07a26"/>
+<circle cx="754.3" cy="102.1" r="5" fill="#e07a26"/>
+<circle cx="845.0" cy="180.8" r="5" fill="#e07a26"/>
+<circle cx="305" cy="518" r="5" fill="#e07a26"/>
+<text x="317" y="523" font-family="Arial" font-size="13">Validação</text>
+<text x="450.0" y="492" text-anchor="middle" font-family="Arial" font-size="15">Passo do otimizador</text>
+<text x="22" y="270.0" text-anchor="middle" transform="rotate(-90 22 270.0)" font-family="Arial" font-size="15">Loss</text>
+</svg>

@@ -1,0 +1,47 @@
+{
+  "timestamp_utc": "2026-09-24T19:26:56.581283+00:00",
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "versions": {
+    "torch": "2.13.0+rocm10.0.0",
+    "transformers": "4.56.2",
+    "tokenizers": "0.22.1",
+    "openpyxl": "3.1.5",
+    "pypdf": "6.1.1",
+    "scikit-learn": "1.7.2"
+  },
+  "inputs": {
+    "train.xlsx": {
+      "size_bytes": 7616781,
+      "sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+      "sheet": "train",
+      "rows_including_header": 20093,
+      "columns": [
+        "resp_text",
+        "clarity"
+      ]
+    },
+    "ep1-enunciado.pdf": {
+      "size_bytes": 154989,
+      "sha256": "d269889e3c3275790e38af23a2c9436ad0b8d404da13ff9d5ace933d6432fe7b",
+      "pages": 14,
+      "extractable_characters": 4733
+    }
+  },
+  "tokenizer": {
+    "model_id": "neuralmind/bert-base-portuguese-cased",
+    "sample_token_count": 10
+  },
+  "gpu": {
+    "available": true,
+    "torch_hip": "7.15.26333",
+    "torch_cuda": null,
+    "name": "AMD Radeon RX 7600",
+    "total_memory_bytes": 8573157376,
+    "training_step_seconds": 0.944166,
+    "peak_allocated_bytes": 86220288,
+    "peak_reserved_bytes": 90177536,
+    "loss": 1.3608442544937134,
+    "weights_changed": true
+  }
+}

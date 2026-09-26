@@ -1,0 +1,139 @@
+{
+  "stage": 6,
+  "run_id": "etapa6_final_20260926",
+  "status": "complete",
+  "created_utc": "2026-09-26T12:43:48.010861+00:00",
+  "frozen_config_path": "configs/bert_stage5_final.json",
+  "frozen_config_sha256": "4377c55014be7f6f3de1b89b9dfb9c64785561b3df1a4b96b4eeef7e9a8b0953",
+  "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+  "split_sha256": "aa9c99a79ccccc3655399761c53098f5fd3d770c9aa6c8b68be29c49eba3586b",
+  "row_manifest_sha256": "e07917a05f89f9940d6194d118fed7ebce9b9342acfc956eb38cadfd4dc2a2c4",
+  "train_rows": 20092,
+  "class_counts": {
+    "c1": 6347,
+    "c234": 6853,
+    "c5": 6892
+  },
+  "train_indices_path": "train_indices.csv",
+  "train_indices_sha256": "6e8305a0468d0893115f8e90d866d0122a692cbcb5e97042bb32f99776a5f19f",
+  "holdout_re_evaluated": false,
+  "test_xlsx_accessed": false,
+  "training": {
+    "seed": 20260924,
+    "optimizer": "torch.optim.AdamW",
+    "learning_rate": 2e-05,
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_epsilon": 1e-08,
+    "weight_decay": 0.01,
+    "scheduler": "none; constant learning rate",
+    "warmup_steps": 0,
+    "gradient_clip_norm": 1.0,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "effective_batch_size": 8,
+    "shuffle": true,
+    "shuffle_generator_seed": 20260924,
+    "num_workers": 0,
+    "optimizer_steps_per_full_epoch": 2511,
+    "dropped_rows_from_incomplete_accumulation_per_complete_epoch": 4,
+    "target_optimizer_steps": 4523,
+    "target_epoch_equivalents": 1.8011005324032865,
+    "max_epochs_as_guard": 2,
+    "duration_derivation": {
+      "selected_start512_best_epochs_by_fold": {
+        "fold_1": 1.871866295264624,
+        "fold_2": 1.610062893081761,
+        "fold_3": 1.9213724088634738
+      },
+      "mean_best_epoch_equivalents": 1.8011005324032865,
+      "full_data_steps_per_epoch": 2511,
+      "rounded_fixed_steps": 4523
+    },
+    "validation_during_final_fit": false,
+    "early_stopping": false,
+    "checkpoint_rule": "save the final model at optimizer step 4523; no model selection during the final fit",
+    "incomplete_gradient_accumulation": "discard at each complete epoch boundary; the fixed target is an optimizer step, so no partial accumulation is carried across epochs",
+    "actual_steps_per_epoch": 2511,
+    "actual_epoch_equivalents": 1.801274392672242
+  },
+  "model": {
+    "architecture": "BERTimbau Base for sequence classification",
+    "pretrained_model_id": "neuralmind/bert-base-portuguese-cased",
+    "pretrained_model_revision": "94d69c95f98f7d5b2a8700c420230ae10def0baa",
+    "initialization": "fresh 3-class classification head on the pretrained base; do not initialize from a fold-fine-tuned checkpoint",
+    "tokenizer_id": "neuralmind/bert-base-portuguese-cased",
+    "tokenizer_revision": "94d69c95f98f7d5b2a8700c420230ae10def0baa",
+    "revision_source": "local Hugging Face cache refs/main at freeze time; pin this revision and use local_files_only during final training",
+    "representation": "start",
+    "max_length_including_special_tokens": 512,
+    "input_preprocessing": "read resp_text as in src/bert_stage3.py; preserve original text; cast non-string values with str(); tokenizer adds special tokens and truncates from the end; dynamic padding within each batch",
+    "num_labels": 3,
+    "label_to_id": {
+      "c1": 0,
+      "c234": 1,
+      "c5": 2
+    },
+    "id_to_label": {
+      "0": "c1",
+      "1": "c234",
+      "2": "c5"
+    },
+    "loss": "cross entropy; no class weights or label smoothing"
+  },
+  "gpu": {
+    "name": "AMD Radeon RX 7600",
+    "total_memory_bytes": 8573157376
+  },
+  "versions": {
+    "torch": "2.13.0+rocm10.0.0",
+    "transformers": "4.56.2",
+    "tokenizers": "0.22.1",
+    "openpyxl": "3.1.5"
+  },
+  "training_completed_utc": "2026-09-26T13:40:32.609887+00:00",
+  "optimizer_steps_completed": 4523,
+  "last_microbatch_loss": 0.835479736328125,
+  "training_seconds": 3401.837,
+  "peak_gpu_memory_bytes": 3266404352,
+  "model_files_sha256": {
+    "config.json": "a9869e5fdf3f7b182afce6da6e7d96b57583eab790954de4f92ddbbc86a5d7df",
+    "model.safetensors": "d27151969c8e05a7d7155312e09d20cca8a44b5e1deaf2f7a871e5a49e963a56",
+    "special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+    "tokenizer.json": "45ccb3e514665f3b11b5e2a8e1a3e29765d94330bc7232aa46c4cdc485bc8881",
+    "tokenizer_config.json": "7525d84e2d59af28db08243599eb1da698db5f415be9fc1f5a41332d27be405b",
+    "vocab.txt": "69c28584c67a0e5018f85ca734aa272cc38e26b5dd0d33fffa28059299f21707"
+  },
+  "reload_validation": {
+    "rows": 5,
+    "row_indices": [
+      0,
+      1,
+      2,
+      10046,
+      20091
+    ],
+    "logits_shape": [
+      5,
+      3
+    ],
+    "probabilities_shape": [
+      5,
+      3
+    ],
+    "probabilities_finite_and_sum_to_one": true,
+    "repeat_predictions_identical": true,
+    "predicted_classes": [
+      "c1",
+      "c1",
+      "c1",
+      "c5",
+      "c5"
+    ],
+    "all_classes_in_frozen_mapping": true,
+    "passed": true
+  },
+  "completed_utc": "2026-09-26T13:40:34.465075+00:00"
+}

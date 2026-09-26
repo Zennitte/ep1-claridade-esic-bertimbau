@@ -1,0 +1,642 @@
+{
+  "run_id": "baseline_20260924_1724",
+  "created_utc": "2026-09-24T20:23:34.278418+00:00",
+  "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+  "split_id": "grouped_v1_seed_20260924",
+  "split_sha256": "aa9c99a79ccccc3655399761c53098f5fd3d770c9aa6c8b68be29c49eba3586b",
+  "config": {
+    "seed": 20260924,
+    "split_id": "grouped_v1_seed_20260924",
+    "classes": [
+      "c1",
+      "c234",
+      "c5"
+    ],
+    "vectorizer": {
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 3,
+      "max_features": 100000,
+      "sublinear_tf": true,
+      "lowercase": true,
+      "norm": "l2"
+    },
+    "classifier": {
+      "solver": "lbfgs",
+      "max_iter": 400,
+      "C_values": [
+        0.5,
+        2.0
+      ]
+    },
+    "cpu_threads": 4
+  },
+  "versions": {
+    "scikit-learn": "1.7.2",
+    "numpy": "2.5.2",
+    "openpyxl": "3.1.5",
+    "joblib": "1.6.0"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "gpu_used": false,
+  "holdout_evaluated": false,
+  "folds": [
+    {
+      "fold": 1,
+      "train_rows": 11488,
+      "validation_rows": 5580,
+      "majority": {
+        "label": "c234",
+        "train": {
+          "accuracy": 0.34183495821727017,
+          "macro_f1": 0.16983457671099578,
+          "recall_by_class": {
+            "c1": 0.0,
+            "c234": 1.0,
+            "c5": 0.0
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              0,
+              3637,
+              0
+            ],
+            [
+              0,
+              3927,
+              0
+            ],
+            [
+              0,
+              3924,
+              0
+            ]
+          ]
+        },
+        "validation": {
+          "accuracy": 0.3387096774193548,
+          "macro_f1": 0.1686746987951807,
+          "recall_by_class": {
+            "c1": 0.0,
+            "c234": 1.0,
+            "c5": 0.0
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              0,
+              1758,
+              0
+            ],
+            [
+              0,
+              1890,
+              0
+            ],
+            [
+              0,
+              1932,
+              0
+            ]
+          ]
+        }
+      },
+      "candidates": [
+        {
+          "C": 0.5,
+          "train": {
+            "accuracy": 0.7066504178272981,
+            "macro_f1": 0.7056040382015428,
+            "recall_by_class": {
+              "c1": 0.6868298047841628,
+              "c234": 0.661319073083779,
+              "c5": 0.7703873598369011
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                2498,
+                510,
+                629
+              ],
+              [
+                633,
+                2597,
+                697
+              ],
+              [
+                484,
+                417,
+                3023
+              ]
+            ]
+          },
+          "validation": {
+            "accuracy": 0.4460573476702509,
+            "macro_f1": 0.4434924251692986,
+            "recall_by_class": {
+              "c1": 0.40159271899886234,
+              "c234": 0.38095238095238093,
+              "c5": 0.5502070393374742
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                706,
+                570,
+                482
+              ],
+              [
+                463,
+                720,
+                707
+              ],
+              [
+                280,
+                589,
+                1063
+              ]
+            ]
+          },
+          "classifier_fit_seconds": 0.999,
+          "prediction_seconds": 0.017,
+          "checkpoint_save_seconds": 0.913,
+          "checkpoint": "models\\baseline\\baseline_20260924_1724\\fold_1_c_0_5.joblib",
+          "iterations": 28,
+          "warnings": []
+        },
+        {
+          "C": 2.0,
+          "train": {
+            "accuracy": 0.8397458217270195,
+            "macro_f1": 0.8394481988797923,
+            "recall_by_class": {
+              "c1": 0.843827330217212,
+              "c234": 0.8148714031066973,
+              "c5": 0.8608562691131498
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                3069,
+                271,
+                297
+              ],
+              [
+                413,
+                3200,
+                314
+              ],
+              [
+                333,
+                213,
+                3378
+              ]
+            ]
+          },
+          "validation": {
+            "accuracy": 0.44480286738351255,
+            "macro_f1": 0.4438348979075215,
+            "recall_by_class": {
+              "c1": 0.43572241183162685,
+              "c234": 0.37671957671957673,
+              "c5": 0.5196687370600414
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                766,
+                553,
+                439
+              ],
+              [
+                507,
+                712,
+                671
+              ],
+              [
+                331,
+                597,
+                1004
+              ]
+            ]
+          },
+          "classifier_fit_seconds": 2.88,
+          "prediction_seconds": 0.017,
+          "checkpoint_save_seconds": 0.763,
+          "checkpoint": "models\\baseline\\baseline_20260924_1724\\fold_1_c_2_0.joblib",
+          "iterations": 85,
+          "warnings": []
+        }
+      ],
+      "vectorizer": {
+        "fit_and_transform_seconds": 3.387,
+        "vocabulary_size": 73040,
+        "train_nonzero": 2130576,
+        "validation_nonzero": 992661
+      }
+    },
+    {
+      "fold": 2,
+      "train_rows": 11451,
+      "validation_rows": 5617,
+      "majority": {
+        "label": "c234",
+        "train": {
+          "accuracy": 0.34066893721072394,
+          "macro_f1": 0.16940246656244573,
+          "recall_by_class": {
+            "c1": 0.0,
+            "c234": 1.0,
+            "c5": 0.0
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              0,
+              3663,
+              0
+            ],
+            [
+              0,
+              3901,
+              0
+            ],
+            [
+              0,
+              3887,
+              0
+            ]
+          ]
+        },
+        "validation": {
+          "accuracy": 0.3411073526793662,
+          "macro_f1": 0.16956502500110626,
+          "recall_by_class": {
+            "c1": 0.0,
+            "c234": 1.0,
+            "c5": 0.0
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              0,
+              1732,
+              0
+            ],
+            [
+              0,
+              1916,
+              0
+            ],
+            [
+              0,
+              1969,
+              0
+            ]
+          ]
+        }
+      },
+      "candidates": [
+        {
+          "C": 0.5,
+          "train": {
+            "accuracy": 0.7155706925159375,
+            "macro_f1": 0.7149195375560969,
+            "recall_by_class": {
+              "c1": 0.6991536991536992,
+              "c234": 0.681363752883876,
+              "c5": 0.7653717519938256
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                2561,
+                500,
+                602
+              ],
+              [
+                616,
+                2658,
+                627
+              ],
+              [
+                487,
+                425,
+                2975
+              ]
+            ]
+          },
+          "validation": {
+            "accuracy": 0.4413387929499733,
+            "macro_f1": 0.4388094956759534,
+            "recall_by_class": {
+              "c1": 0.40415704387990764,
+              "c234": 0.3804801670146138,
+              "c5": 0.5332656170644997
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                700,
+                587,
+                445
+              ],
+              [
+                531,
+                729,
+                656
+              ],
+              [
+                330,
+                589,
+                1050
+              ]
+            ]
+          },
+          "classifier_fit_seconds": 1.628,
+          "prediction_seconds": 0.016,
+          "checkpoint_save_seconds": 0.755,
+          "checkpoint": "models\\baseline\\baseline_20260924_1724\\fold_2_c_0_5.joblib",
+          "iterations": 50,
+          "warnings": []
+        },
+        {
+          "C": 2.0,
+          "train": {
+            "accuracy": 0.8435944458999214,
+            "macro_f1": 0.8434578235211947,
+            "recall_by_class": {
+              "c1": 0.8596778596778597,
+              "c234": 0.8120994616764932,
+              "c5": 0.8600463082068434
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                3149,
+                252,
+                262
+              ],
+              [
+                446,
+                3168,
+                287
+              ],
+              [
+                334,
+                210,
+                3343
+              ]
+            ]
+          },
+          "validation": {
+            "accuracy": 0.4347516467865409,
+            "macro_f1": 0.4334353045997663,
+            "recall_by_class": {
+              "c1": 0.4214780600461894,
+              "c234": 0.37734864300626303,
+              "c5": 0.5022854240731336
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                730,
+                579,
+                423
+              ],
+              [
+                575,
+                723,
+                618
+              ],
+              [
+                393,
+                587,
+                989
+              ]
+            ]
+          },
+          "classifier_fit_seconds": 2.961,
+          "prediction_seconds": 0.017,
+          "checkpoint_save_seconds": 0.773,
+          "checkpoint": "models\\baseline\\baseline_20260924_1724\\fold_2_c_2_0.joblib",
+          "iterations": 92,
+          "warnings": []
+        }
+      ],
+      "vectorizer": {
+        "fit_and_transform_seconds": 3.105,
+        "vocabulary_size": 72235,
+        "train_nonzero": 2092199,
+        "validation_nonzero": 1030310
+      }
+    },
+    {
+      "fold": 3,
+      "train_rows": 11197,
+      "validation_rows": 5871,
+      "majority": {
+        "label": "c5",
+        "train": {
+          "accuracy": 0.34839689202464946,
+          "macro_f1": 0.17225239546076743,
+          "recall_by_class": {
+            "c1": 0.0,
+            "c234": 0.0,
+            "c5": 1.0
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              0,
+              0,
+              3490
+            ],
+            [
+              0,
+              0,
+              3806
+            ],
+            [
+              0,
+              0,
+              3901
+            ]
+          ]
+        },
+        "validation": {
+          "accuracy": 0.33299267586441833,
+          "macro_f1": 0.16653888746912002,
+          "recall_by_class": {
+            "c1": 0.0,
+            "c234": 0.0,
+            "c5": 1.0
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              0,
+              0,
+              1905
+            ],
+            [
+              0,
+              0,
+              2011
+            ],
+            [
+              0,
+              0,
+              1955
+            ]
+          ]
+        }
+      },
+      "candidates": [
+        {
+          "C": 0.5,
+          "train": {
+            "accuracy": 0.722247030454586,
+            "macro_f1": 0.7208180608094398,
+            "recall_by_class": {
+              "c1": 0.6845272206303725,
+              "c234": 0.6789280084077772,
+              "c5": 0.7982568572160984
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                2389,
+                463,
+                638
+              ],
+              [
+                511,
+                2584,
+                711
+              ],
+              [
+                348,
+                439,
+                3114
+              ]
+            ]
+          },
+          "validation": {
+            "accuracy": 0.45375574859478796,
+            "macro_f1": 0.45129141763795805,
+            "recall_by_class": {
+              "c1": 0.4435695538057743,
+              "c234": 0.36200895077076084,
+              "c5": 0.5580562659846547
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                845,
+                508,
+                552
+              ],
+              [
+                558,
+                728,
+                725
+              ],
+              [
+                350,
+                514,
+                1091
+              ]
+            ]
+          },
+          "classifier_fit_seconds": 1.908,
+          "prediction_seconds": 0.021,
+          "checkpoint_save_seconds": 0.79,
+          "checkpoint": "models\\baseline\\baseline_20260924_1724\\fold_3_c_0_5.joblib",
+          "iterations": 54,
+          "warnings": []
+        },
+        {
+          "C": 2.0,
+          "train": {
+            "accuracy": 0.8524604804858444,
+            "macro_f1": 0.8519838775510257,
+            "recall_by_class": {
+              "c1": 0.8461318051575931,
+              "c234": 0.8294797687861272,
+              "c5": 0.8805434503973341
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                2953,
+                245,
+                292
+              ],
+              [
+                332,
+                3157,
+                317
+              ],
+              [
+                239,
+                227,
+                3435
+              ]
+            ]
+          },
+          "validation": {
+            "accuracy": 0.44677227048203033,
+            "macro_f1": 0.44565103282773316,
+            "recall_by_class": {
+              "c1": 0.4587926509186352,
+              "c234": 0.36747886623570364,
+              "c5": 0.5166240409207161
+            },
+            "confusion_matrix_rows_true_columns_predicted": [
+              [
+                874,
+                523,
+                508
+              ],
+              [
+                602,
+                739,
+                670
+              ],
+              [
+                402,
+                543,
+                1010
+              ]
+            ]
+          },
+          "classifier_fit_seconds": 2.996,
+          "prediction_seconds": 0.018,
+          "checkpoint_save_seconds": 0.763,
+          "checkpoint": "models\\baseline\\baseline_20260924_1724\\fold_3_c_2_0.joblib",
+          "iterations": 91,
+          "warnings": []
+        }
+      ],
+      "vectorizer": {
+        "fit_and_transform_seconds": 3.27,
+        "vocabulary_size": 72114,
+        "train_nonzero": 2082366,
+        "validation_nonzero": 1038514
+      }
+    }
+  ],
+  "summary": {
+    "majority_mean_accuracy": 0.33760323532104647,
+    "majority_mean_macro_f1": 0.168259537088469,
+    "candidates": [
+      {
+        "C": 0.5,
+        "mean_accuracy": 0.4470506297383374,
+        "std_accuracy": 0.0062677869955360035,
+        "mean_macro_f1": 0.4445311128277367,
+        "mean_train_accuracy": 0.7148227135992739,
+        "total_classifier_fit_seconds": 4.535
+      },
+      {
+        "C": 2.0,
+        "mean_accuracy": 0.4421089282173612,
+        "std_accuracy": 0.00644723426597278,
+        "mean_macro_f1": 0.4409737451116737,
+        "mean_train_accuracy": 0.8452669160375951,
+        "total_classifier_fit_seconds": 8.837
+      }
+    ],
+    "selected_C_by_mean_validation_accuracy": 0.5
+  },
+  "total_wall_seconds": 28.842
+}

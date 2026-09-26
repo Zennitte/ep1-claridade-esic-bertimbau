@@ -1,0 +1,148 @@
+{
+  "stage": "5f",
+  "run_id": "etapa5f_start512_lr2e5_audit_20260926",
+  "created_utc": "2026-09-26T11:40:26.286253+00:00",
+  "frozen_config_sha256": "4377c55014be7f6f3de1b89b9dfb9c64785561b3df1a4b96b4eeef7e9a8b0953",
+  "integrity": {
+    "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+    "split_sha256": "aa9c99a79ccccc3655399761c53098f5fd3d770c9aa6c8b68be29c49eba3586b",
+    "row_manifest_sha256": "e07917a05f89f9940d6194d118fed7ebce9b9342acfc956eb38cadfd4dc2a2c4",
+    "development_rows": 17068,
+    "development_class_counts": {
+      "c1": 5395,
+      "c234": 5817,
+      "c5": 5856
+    },
+    "holdout_rows": 3024,
+    "index_overlap": 0,
+    "group_overlap": 0,
+    "holdout_labels_requested_during_preflight": false,
+    "holdout_labels_requested_for_audit": true
+  },
+  "model": {
+    "architecture": "BERTimbau Base for sequence classification",
+    "pretrained_model_id": "neuralmind/bert-base-portuguese-cased",
+    "pretrained_model_revision": "94d69c95f98f7d5b2a8700c420230ae10def0baa",
+    "initialization": "fresh 3-class classification head on the pretrained base; do not initialize from a fold-fine-tuned checkpoint",
+    "tokenizer_id": "neuralmind/bert-base-portuguese-cased",
+    "tokenizer_revision": "94d69c95f98f7d5b2a8700c420230ae10def0baa",
+    "revision_source": "local Hugging Face cache refs/main at freeze time; pin this revision and use local_files_only during final training",
+    "representation": "start",
+    "max_length_including_special_tokens": 512,
+    "input_preprocessing": "read resp_text as in src/bert_stage3.py; preserve original text; cast non-string values with str(); tokenizer adds special tokens and truncates from the end; dynamic padding within each batch",
+    "num_labels": 3,
+    "label_to_id": {
+      "c1": 0,
+      "c234": 1,
+      "c5": 2
+    },
+    "id_to_label": {
+      "0": "c1",
+      "1": "c234",
+      "2": "c5"
+    },
+    "loss": "cross entropy; no class weights or label smoothing"
+  },
+  "training": {
+    "seed": 20260924,
+    "optimizer": "torch.optim.AdamW",
+    "learning_rate": 2e-05,
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_epsilon": 1e-08,
+    "weight_decay": 0.01,
+    "scheduler": "none; constant learning rate",
+    "warmup_steps": 0,
+    "gradient_clip_norm": 1.0,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "effective_batch_size": 8,
+    "shuffle": true,
+    "shuffle_generator_seed": 20260924,
+    "num_workers": 0,
+    "optimizer_steps_per_full_epoch": 2511,
+    "dropped_rows_from_incomplete_accumulation_per_complete_epoch": 4,
+    "target_optimizer_steps": 4523,
+    "target_epoch_equivalents": 1.8011005324032865,
+    "max_epochs_as_guard": 2,
+    "duration_derivation": {
+      "selected_start512_best_epochs_by_fold": {
+        "fold_1": 1.871866295264624,
+        "fold_2": 1.610062893081761,
+        "fold_3": 1.9213724088634738
+      },
+      "mean_best_epoch_equivalents": 1.8011005324032865,
+      "full_data_steps_per_epoch": 2511,
+      "rounded_fixed_steps": 4523
+    },
+    "validation_during_final_fit": false,
+    "early_stopping": false,
+    "checkpoint_rule": "save the final model at optimizer step 4523; no model selection during the final fit",
+    "incomplete_gradient_accumulation": "discard at each complete epoch boundary; the fixed target is an optimizer step, so no partial accumulation is carried across epochs",
+    "development_steps_per_epoch": 2133,
+    "target_optimizer_steps_5f": 3842,
+    "actual_epoch_equivalents": 1.8012189404594467
+  },
+  "holdout_evaluation_started": true,
+  "holdout_evaluated": true,
+  "gpu": {
+    "name": "AMD Radeon RX 7600",
+    "total_memory_bytes": 8573157376
+  },
+  "versions": {
+    "torch": "2.13.0+rocm10.0.0",
+    "transformers": "4.56.2",
+    "tokenizers": "0.22.1",
+    "openpyxl": "3.1.5"
+  },
+  "training_completed_utc": "2026-09-26T12:27:44.523259+00:00",
+  "train_steps_completed": 3842,
+  "train_seconds": 2834.67,
+  "peak_gpu_memory_bytes": 3250723840,
+  "checkpoint_sha256": {
+    "config.json": "a9869e5fdf3f7b182afce6da6e7d96b57583eab790954de4f92ddbbc86a5d7df",
+    "model.safetensors": "a036a0867954ce2ae09ec924f5cc749da7136ae891e524a42c78e4024495d61c",
+    "special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+    "tokenizer.json": "45ccb3e514665f3b11b5e2a8e1a3e29765d94330bc7232aa46c4cdc485bc8881",
+    "tokenizer_config.json": "7525d84e2d59af28db08243599eb1da698db5f415be9fc1f5a41332d27be405b",
+    "vocab.txt": "69c28584c67a0e5018f85ca734aa272cc38e26b5dd0d33fffa28059299f21707"
+  },
+  "holdout_evaluation_started_utc": "2026-09-26T12:27:45.182771+00:00",
+  "holdout_evaluation_completed_utc": "2026-09-26T12:29:50.491333+00:00",
+  "holdout_inference_seconds": 124.416,
+  "holdout_metrics": {
+    "accuracy": 0.45965608465608465,
+    "macro_f1": 0.44522895738181284,
+    "recall_by_class": {
+      "c1": 0.5126050420168067,
+      "c234": 0.2413127413127413,
+      "c5": 0.6293436293436293
+    },
+    "confusion_matrix_rows_true_columns_predicted": [
+      [
+        488,
+        188,
+        276
+      ],
+      [
+        353,
+        250,
+        433
+      ],
+      [
+        194,
+        190,
+        652
+      ]
+    ],
+    "support_by_class": {
+      "c1": 952,
+      "c234": 1036,
+      "c5": 1036
+    }
+  },
+  "holdout_loss": 1.0429116936903151,
+  "holdout_predictions_sha256": "4c3451164b75775dd5c004b1519edf1a6d8fa36c911220ba9eb2a53e13762835"
+}

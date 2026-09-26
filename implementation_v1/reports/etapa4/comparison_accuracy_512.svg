@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="35" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">Etapa 4: janela 512, acuracia (n=1024)</text>
+<line x1="90" y1="455.0" x2="845" y2="455.0" stroke="#e8edf2"/>
+<text x="78" y="460.0" text-anchor="end" font-family="Arial" font-size="13">0.336</text>
+<line x1="90" y1="378.0" x2="845" y2="378.0" stroke="#e8edf2"/>
+<text x="78" y="383.0" text-anchor="end" font-family="Arial" font-size="13">0.362</text>
+<line x1="90" y1="301.0" x2="845" y2="301.0" stroke="#e8edf2"/>
+<text x="78" y="306.0" text-anchor="end" font-family="Arial" font-size="13">0.389</text>
+<line x1="90" y1="224.0" x2="845" y2="224.0" stroke="#e8edf2"/>
+<text x="78" y="229.0" text-anchor="end" font-family="Arial" font-size="13">0.416</text>
+<line x1="90" y1="147.0" x2="845" y2="147.0" stroke="#e8edf2"/>
+<text x="78" y="152.0" text-anchor="end" font-family="Arial" font-size="13">0.442</text>
+<line x1="90" y1="70.0" x2="845" y2="70.0" stroke="#e8edf2"/>
+<text x="78" y="75.0" text-anchor="end" font-family="Arial" font-size="13">0.469</text>
+<line x1="90.0" y1="70" x2="90.0" y2="455" stroke="#f1f3f5"/>
+<text x="90.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">1.3e+02</text>
+<line x1="241.0" y1="70" x2="241.0" y2="455" stroke="#f1f3f5"/>
+<text x="241.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">3.1e+02</text>
+<line x1="392.0" y1="70" x2="392.0" y2="455" stroke="#f1f3f5"/>
+<text x="392.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">4.9e+02</text>
+<line x1="543.0" y1="70" x2="543.0" y2="455" stroke="#f1f3f5"/>
+<text x="543.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">6.7e+02</text>
+<line x1="694.0" y1="70" x2="694.0" y2="455" stroke="#f1f3f5"/>
+<text x="694.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">8.4e+02</text>
+<line x1="845.0" y1="70" x2="845.0" y2="455" stroke="#f1f3f5"/>
+<text x="845.0" y="480" text-anchor="middle" font-family="Arial" font-size="13">1e+03</text>
+<line x1="90" y1="455" x2="845" y2="455" stroke="#34495e" stroke-width="2"/>
+<line x1="90" y1="70" x2="90" y2="455" stroke="#34495e" stroke-width="2"/>
+<polyline points="90.0,349.7 197.9,265.3 305.7,192.1 413.6,206.2 521.4,152.7 629.3,197.8 737.1,102.1 845.0,138.7" fill="none" stroke="#1769aa" stroke-width="3"/>
+<circle cx="90.0" cy="349.7" r="5" fill="#1769aa"/>
+<circle cx="197.9" cy="265.3" r="5" fill="#1769aa"/>
+<circle cx="305.7" cy="192.1" r="5" fill="#1769aa"/>
+<circle cx="413.6" cy="206.2" r="5" fill="#1769aa"/>
+<circle cx="521.4" cy="152.7" r="5" fill="#1769aa"/>
+<circle cx="629.3" cy="197.8" r="5" fill="#1769aa"/>
+<circle cx="737.1" cy="102.1" r="5" fill="#1769aa"/>
+<circle cx="845.0" cy="138.7" r="5" fill="#1769aa"/>
+<circle cx="90" cy="518" r="5" fill="#1769aa"/>
+<text x="102" y="523" font-family="Arial" font-size="13">inicio 2e-5</text>
+<polyline points="90.0,349.7 197.9,273.8 305.7,172.4 413.6,251.2 521.4,155.6 629.3,248.4 737.1,119.0 845.0,203.4" fill="none" stroke="#e07a26" stroke-width="3"/>
+<circle cx="90.0" cy="349.7" r="5" fill="#e07a26"/>
+<circle cx="197.9" cy="273.8" r="5" fill="#e07a26"/>
+<circle cx="305.7" cy="172.4" r="5" fill="#e07a26"/>
+<circle cx="413.6" cy="251.2" r="5" fill="#e07a26"/>
+<circle cx="521.4" cy="155.6" r="5" fill="#e07a26"/>
+<circle cx="629.3" cy="248.4" r="5" fill="#e07a26"/>
+<circle cx="737.1" cy="119.0" r="5" fill="#e07a26"/>
+<circle cx="845.0" cy="203.4" r="5" fill="#e07a26"/>
+<circle cx="250" cy="518" r="5" fill="#e07a26"/>
+<text x="262" y="523" font-family="Arial" font-size="13">início+fim 2e-5</text>
+<polyline points="90.0,408.8 197.9,316.0 305.7,237.2 413.6,245.6 521.4,161.2 629.3,248.4 737.1,152.7 845.0,206.2" fill="none" stroke="#27854d" stroke-width="3"/>
+<circle cx="90.0" cy="408.8" r="5" fill="#27854d"/>
+<circle cx="197.9" cy="316.0" r="5" fill="#27854d"/>
+<circle cx="305.7" cy="237.2" r="5" fill="#27854d"/>
+<circle cx="413.6" cy="245.6" r="5" fill="#27854d"/>
+<circle cx="521.4" cy="161.2" r="5" fill="#27854d"/>
+<circle cx="629.3" cy="248.4" r="5" fill="#27854d"/>
+<circle cx="737.1" cy="152.7" r="5" fill="#27854d"/>
+<circle cx="845.0" cy="206.2" r="5" fill="#27854d"/>
+<circle cx="410" cy="518" r="5" fill="#27854d"/>
+<text x="422" y="523" font-family="Arial" font-size="13">início 3e-5</text>
+<polyline points="90.0,422.9 197.9,296.3 305.7,262.5 413.6,276.6 521.4,214.7 629.3,262.5 737.1,152.7 845.0,130.2" fill="none" stroke="#a33a8e" stroke-width="3"/>
+<circle cx="90.0" cy="422.9" r="5" fill="#a33a8e"/>
+<circle cx="197.9" cy="296.3" r="5" fill="#a33a8e"/>
+<circle cx="305.7" cy="262.5" r="5" fill="#a33a8e"/>
+<circle cx="413.6" cy="276.6" r="5" fill="#a33a8e"/>
+<circle cx="521.4" cy="214.7" r="5" fill="#a33a8e"/>
+<circle cx="629.3" cy="262.5" r="5" fill="#a33a8e"/>
+<circle cx="737.1" cy="152.7" r="5" fill="#a33a8e"/>
+<circle cx="845.0" cy="130.2" r="5" fill="#a33a8e"/>
+<circle cx="570" cy="518" r="5" fill="#a33a8e"/>
+<text x="582" y="523" font-family="Arial" font-size="13">início+fim 3e-5</text>
+<polyline points="90.0,147.1 845.0,147.1" fill="none" stroke="#777777" stroke-width="3"/>
+<circle cx="90.0" cy="147.1" r="5" fill="#777777"/>
+<circle cx="845.0" cy="147.1" r="5" fill="#777777"/>
+<circle cx="730" cy="518" r="5" fill="#777777"/>
+<text x="742" y="523" font-family="Arial" font-size="13">TF-IDF C=0,5</text>
+<text x="450.0" y="492" text-anchor="middle" font-family="Arial" font-size="15">Passo do otimizador</text>
+<text x="22" y="270.0" text-anchor="middle" transform="rotate(-90 22 270.0)" font-family="Arial" font-size="15">Acurácia</text>
+</svg>

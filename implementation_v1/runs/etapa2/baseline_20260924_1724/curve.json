@@ -1,0 +1,59 @@
+{
+  "title": "Baseline TF-IDF: acurácia por regularização",
+  "x_label": "C da regressão logística",
+  "y_label": "Acurácia",
+  "series": [
+    {
+      "label": "Validação fold 1",
+      "points": [
+        [
+          0.5,
+          0.4460573476702509
+        ],
+        [
+          2.0,
+          0.44480286738351255
+        ]
+      ]
+    },
+    {
+      "label": "Validação fold 2",
+      "points": [
+        [
+          0.5,
+          0.4413387929499733
+        ],
+        [
+          2.0,
+          0.4347516467865409
+        ]
+      ]
+    },
+    {
+      "label": "Validação fold 3",
+      "points": [
+        [
+          0.5,
+          0.45375574859478796
+        ],
+        [
+          2.0,
+          0.44677227048203033
+        ]
+      ]
+    },
+    {
+      "label": "Média validação",
+      "points": [
+        [
+          0.5,
+          0.4470506297383374
+        ],
+        [
+          2.0,
+          0.4421089282173612
+        ]
+      ]
+    }
+  ]
+}

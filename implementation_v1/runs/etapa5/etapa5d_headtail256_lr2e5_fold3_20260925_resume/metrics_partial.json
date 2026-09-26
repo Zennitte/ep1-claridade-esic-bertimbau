@@ -1,0 +1,487 @@
+{
+  "run_id": "etapa5d_headtail256_lr2e5_fold3_20260925_resume",
+  "created_utc": "2026-09-26T01:12:14.226000+00:00",
+  "candidate": {
+    "id": "headtail256_lr2e5",
+    "representation": "head_tail",
+    "max_length": 256,
+    "learning_rate": 2e-05,
+    "hypothesis": "O fim da resposta pode conter a informação decisiva omitida pelo truncamento inicial."
+  },
+  "config": {
+    "model_id": "neuralmind/bert-base-portuguese-cased",
+    "split_id": "grouped_v1_seed_20260924",
+    "seed": 20260924,
+    "fold": 3,
+    "labels": [
+      "c1",
+      "c234",
+      "c5"
+    ],
+    "train_rows": 4096,
+    "validation_rows": 1024,
+    "max_epochs": 2,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "weight_decay": 0.01,
+    "eval_every_optimizer_steps": 384,
+    "early_stopping_min_steps": 512,
+    "early_stopping_patience_evaluations": 3,
+    "candidates": [
+      {
+        "id": "start256_lr2e5",
+        "representation": "start",
+        "max_length": 256,
+        "learning_rate": 2e-05,
+        "hypothesis": "Referência para a triagem, mantendo a janela e a taxa da Etapa 3."
+      },
+      {
+        "id": "headtail256_lr2e5",
+        "representation": "head_tail",
+        "max_length": 256,
+        "learning_rate": 2e-05,
+        "hypothesis": "O fim da resposta pode conter a informação decisiva omitida pelo truncamento inicial."
+      },
+      {
+        "id": "start512_lr2e5",
+        "representation": "start",
+        "max_length": 512,
+        "learning_rate": 2e-05,
+        "hypothesis": "Uma janela maior preserva mais respostas sem truncamento, a custo de tempo e memória."
+      },
+      {
+        "id": "start256_lr3e5",
+        "representation": "start",
+        "max_length": 256,
+        "learning_rate": 3e-05,
+        "hypothesis": "Uma taxa um pouco maior pode acelerar o aprendizado observado como lento na Etapa 3."
+      },
+      {
+        "id": "headtail256_lr3e5",
+        "representation": "head_tail",
+        "max_length": 256,
+        "learning_rate": 3e-05,
+        "hypothesis": "Verifica se a taxa maior também melhora a representação início + fim na janela de 256 tokens."
+      },
+      {
+        "id": "headtail512_lr2e5",
+        "representation": "head_tail",
+        "max_length": 512,
+        "learning_rate": 2e-05,
+        "hypothesis": "Verifica se início + fim aproveita a janela de 512 tokens melhor que o truncamento inicial."
+      },
+      {
+        "id": "start512_lr3e5",
+        "representation": "start",
+        "max_length": 512,
+        "learning_rate": 3e-05,
+        "hypothesis": "Verifica a interação da taxa maior com a janela inicial de 512 tokens."
+      },
+      {
+        "id": "headtail512_lr3e5",
+        "representation": "head_tail",
+        "max_length": 512,
+        "learning_rate": 3e-05,
+        "hypothesis": "Completa a comparação entre representação, comprimento e taxa de aprendizado."
+      }
+    ]
+  },
+  "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+  "split_id": "grouped_v1_seed_20260924",
+  "split_sha256": "aa9c99a79ccccc3655399761c53098f5fd3d770c9aa6c8b68be29c49eba3586b",
+  "subset_id": "full_fold_3",
+  "subset_sha256": null,
+  "train_indices_manifest": null,
+  "full_fold": true,
+  "train_rows": 11197,
+  "validation_rows": 5871,
+  "train_token_stats": {
+    "rows": 11197,
+    "truncated_rows": 3993,
+    "mean_encoded_tokens": 168.07,
+    "max_encoded_tokens": 256
+  },
+  "validation_token_stats": {
+    "rows": 5871,
+    "truncated_rows": 2056,
+    "mean_encoded_tokens": 166.47,
+    "max_encoded_tokens": 256
+  },
+  "holdout_evaluated": false,
+  "versions": {
+    "torch": "2.13.0+rocm10.0.0",
+    "transformers": "4.56.2",
+    "tokenizers": "0.22.1",
+    "openpyxl": "3.1.5"
+  },
+  "gpu": {
+    "name": "AMD Radeon RX 7600",
+    "total_memory_bytes": 8573157376
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "optimizer_step": 384,
+      "train": {
+        "loss": 1.0950693929335102,
+        "accuracy": 0.3876953125,
+        "rows_seen_since_last_eval": 3072
+      },
+      "validation": {
+        "loss": 1.0838049172218036,
+        "metrics": {
+          "accuracy": 0.40725600408788964,
+          "macro_f1": 0.3818445349621981,
+          "recall_by_class": {
+            "c1": 0.5769028871391076,
+            "c234": 0.14470412729985083,
+            "c5": 0.5120204603580563
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              1099,
+              193,
+              613
+            ],
+            [
+              935,
+              291,
+              785
+            ],
+            [
+              692,
+              262,
+              1001
+            ]
+          ]
+        },
+        "rows": 5871,
+        "seconds": 135.05
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 768,
+      "train": {
+        "loss": 1.0759283442166634,
+        "accuracy": 0.4095052083333333,
+        "rows_seen_since_last_eval": 3072
+      },
+      "validation": {
+        "loss": 1.0984691675873595,
+        "metrics": {
+          "accuracy": 0.37830011923011414,
+          "macro_f1": 0.28195431611412897,
+          "recall_by_class": {
+            "c1": 0.12020997375328084,
+            "c234": 0.9144704127299851,
+            "c5": 0.0782608695652174
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              229,
+              1643,
+              33
+            ],
+            [
+              110,
+              1839,
+              62
+            ],
+            [
+              72,
+              1730,
+              153
+            ]
+          ]
+        },
+        "rows": 5871,
+        "seconds": 134.969
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 1152,
+      "train": {
+        "loss": 1.0607852480801132,
+        "accuracy": 0.4329427083333333,
+        "rows_seen_since_last_eval": 3072
+      },
+      "validation": {
+        "loss": 1.0499281981108726,
+        "metrics": {
+          "accuracy": 0.4391074774314427,
+          "macro_f1": 0.4399884728934514,
+          "recall_by_class": {
+            "c1": 0.4136482939632546,
+            "c234": 0.4301342615614122,
+            "c5": 0.4731457800511509
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              788,
+              656,
+              461
+            ],
+            [
+              509,
+              865,
+              637
+            ],
+            [
+              333,
+              697,
+              925
+            ]
+          ]
+        },
+        "rows": 5871,
+        "seconds": 134.881
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 1399,
+      "train": {
+        "loss": 1.072381955560161,
+        "accuracy": 0.40789473684210525,
+        "rows_seen_since_last_eval": 1976
+      },
+      "validation": {
+        "loss": 1.045746103561101,
+        "metrics": {
+          "accuracy": 0.4358712314767501,
+          "macro_f1": 0.4145136325547691,
+          "recall_by_class": {
+            "c1": 0.5595800524934383,
+            "c234": 0.17702635504724018,
+            "c5": 0.5815856777493607
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              1066,
+              295,
+              544
+            ],
+            [
+              798,
+              356,
+              857
+            ],
+            [
+              526,
+              292,
+              1137
+            ]
+          ]
+        },
+        "rows": 5871,
+        "seconds": 134.97
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 1536,
+      "train": {
+        "loss": 1.0112849422832475,
+        "accuracy": 0.458029197080292,
+        "rows_seen_since_last_eval": 1096
+      },
+      "validation": {
+        "loss": 1.0535978505851422,
+        "metrics": {
+          "accuracy": 0.4387668199625277,
+          "macro_f1": 0.4299679126053624,
+          "recall_by_class": {
+            "c1": 0.45721784776902885,
+            "c234": 0.27200397812033816,
+            "c5": 0.5923273657289002
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              871,
+              439,
+              595
+            ],
+            [
+              596,
+              547,
+              868
+            ],
+            [
+              414,
+              383,
+              1158
+            ]
+          ]
+        },
+        "rows": 5871,
+        "seconds": 135.264
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 1920,
+      "train": {
+        "loss": 1.0166006532575314,
+        "accuracy": 0.490234375,
+        "rows_seen_since_last_eval": 3072
+      },
+      "validation": {
+        "loss": 1.0537350807618777,
+        "metrics": {
+          "accuracy": 0.4450689831374553,
+          "macro_f1": 0.44175133569585573,
+          "recall_by_class": {
+            "c1": 0.4293963254593176,
+            "c234": 0.3416210840377921,
+            "c5": 0.5667519181585677
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              818,
+              487,
+              600
+            ],
+            [
+              546,
+              687,
+              778
+            ],
+            [
+              310,
+              537,
+              1108
+            ]
+          ]
+        },
+        "rows": 5871,
+        "seconds": 135.903
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 2304,
+      "train": {
+        "loss": 1.0292531984450761,
+        "accuracy": 0.4742838541666667,
+        "rows_seen_since_last_eval": 3072
+      },
+      "validation": {
+        "loss": 1.0414941536265487,
+        "metrics": {
+          "accuracy": 0.44796457162323283,
+          "macro_f1": 0.4495623014714965,
+          "recall_by_class": {
+            "c1": 0.4356955380577428,
+            "c234": 0.4067628045748384,
+            "c5": 0.5023017902813299
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              830,
+              678,
+              397
+            ],
+            [
+              518,
+              818,
+              675
+            ],
+            [
+              295,
+              678,
+              982
+            ]
+          ]
+        },
+        "rows": 5871,
+        "seconds": 135.937
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 2688,
+      "train": {
+        "loss": 1.0072774464885395,
+        "accuracy": 0.4876302083333333,
+        "rows_seen_since_last_eval": 3072
+      },
+      "validation": {
+        "loss": 1.0400405115294225,
+        "metrics": {
+          "accuracy": 0.44881621529552035,
+          "macro_f1": 0.44914050082688756,
+          "recall_by_class": {
+            "c1": 0.3779527559055118,
+            "c234": 0.43709597215315765,
+            "c5": 0.529923273657289
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              720,
+              781,
+              404
+            ],
+            [
+              439,
+              879,
+              693
+            ],
+            [
+              225,
+              694,
+              1036
+            ]
+          ]
+        },
+        "rows": 5871,
+        "seconds": 135.034
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 2798,
+      "train": {
+        "loss": 1.0024215364998037,
+        "accuracy": 0.4727272727272727,
+        "rows_seen_since_last_eval": 880
+      },
+      "validation": {
+        "loss": 1.056066727388496,
+        "metrics": {
+          "accuracy": 0.44455799693408277,
+          "macro_f1": 0.4380516219868233,
+          "recall_by_class": {
+            "c1": 0.5238845144356955,
+            "c234": 0.2819492789656887,
+            "c5": 0.5345268542199488
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              998,
+              430,
+              477
+            ],
+            [
+              744,
+              567,
+              700
+            ],
+            [
+              466,
+              444,
+              1045
+            ]
+          ]
+        },
+        "rows": 5871,
+        "seconds": 134.952
+      }
+    }
+  ],
+  "effective_micro_batches_per_epoch": 5596,
+  "dropped_train_rows_per_epoch": 5,
+  "best_optimizer_step": 2688,
+  "best_validation_accuracy": 0.44881621529552035
+}

@@ -1,0 +1,44 @@
+{
+  "method": "fold-1 train-only TF-IDF word uni/bigrams; per-validation-row maximum and top-5 cosine to each training class",
+  "vectorizer": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 3,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "lowercase": true,
+    "norm": "l2"
+  },
+  "train_rows": 11488,
+  "validation_rows": 5580,
+  "holdout_evaluated": false,
+  "intermediate_class_diagnostics": {
+    "true_class": "c234",
+    "n": 1890,
+    "by_nearest_train_class": {
+      "c1": {
+        "mean_max_cosine": 0.4550795502534884,
+        "median_max_cosine": 0.3870212267175138,
+        "mean_top5_cosine": 0.3579091700064823
+      },
+      "c234": {
+        "mean_max_cosine": 0.4777893603169337,
+        "median_max_cosine": 0.42658963037803665,
+        "mean_top5_cosine": 0.3747046722621963
+      },
+      "c5": {
+        "mean_max_cosine": 0.4592842713160515,
+        "median_max_cosine": 0.4052560275481039,
+        "mean_top5_cosine": 0.36147702628476036
+      }
+    },
+    "nearest_neighbor_label_counts": {
+      "c1": 630,
+      "c234": 654,
+      "c5": 606
+    }
+  },
+  "interpretation_limit": "Similarity is lexical, not semantic; it is exploratory and does not estimate human labelability."
+}

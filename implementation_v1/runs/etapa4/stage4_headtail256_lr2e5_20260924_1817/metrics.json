@@ -1,0 +1,441 @@
+{
+  "run_id": "stage4_headtail256_lr2e5_20260924_1817",
+  "created_utc": "2026-09-24T21:16:20.636491+00:00",
+  "candidate": {
+    "id": "headtail256_lr2e5",
+    "representation": "head_tail",
+    "max_length": 256,
+    "learning_rate": 2e-05,
+    "hypothesis": "O fim da resposta pode conter a informação decisiva omitida pelo truncamento inicial."
+  },
+  "config": {
+    "model_id": "neuralmind/bert-base-portuguese-cased",
+    "split_id": "grouped_v1_seed_20260924",
+    "seed": 20260924,
+    "fold": 1,
+    "labels": [
+      "c1",
+      "c234",
+      "c5"
+    ],
+    "train_rows": 4096,
+    "validation_rows": 1024,
+    "max_epochs": 2,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "weight_decay": 0.01,
+    "eval_every_optimizer_steps": 128,
+    "early_stopping_min_steps": 512,
+    "early_stopping_patience_evaluations": 3,
+    "candidates": [
+      {
+        "id": "start256_lr2e5",
+        "representation": "start",
+        "max_length": 256,
+        "learning_rate": 2e-05,
+        "hypothesis": "Referência para a triagem, mantendo a janela e a taxa da Etapa 3."
+      },
+      {
+        "id": "headtail256_lr2e5",
+        "representation": "head_tail",
+        "max_length": 256,
+        "learning_rate": 2e-05,
+        "hypothesis": "O fim da resposta pode conter a informação decisiva omitida pelo truncamento inicial."
+      },
+      {
+        "id": "start512_lr2e5",
+        "representation": "start",
+        "max_length": 512,
+        "learning_rate": 2e-05,
+        "hypothesis": "Uma janela maior preserva mais respostas sem truncamento, a custo de tempo e memória."
+      },
+      {
+        "id": "start256_lr3e5",
+        "representation": "start",
+        "max_length": 256,
+        "learning_rate": 3e-05,
+        "hypothesis": "Uma taxa um pouco maior pode acelerar o aprendizado observado como lento na Etapa 3."
+      }
+    ]
+  },
+  "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+  "split_id": "grouped_v1_seed_20260924",
+  "split_sha256": "aa9c99a79ccccc3655399761c53098f5fd3d770c9aa6c8b68be29c49eba3586b",
+  "subset_id": "stage4_fold1_stratified_4096_1024_seed_20260924",
+  "subset_sha256": "d66f12f5798eb6f4d5567d14ac1c61a1077b37e312be229c86c844003f1a092a",
+  "train_rows": 4096,
+  "validation_rows": 1024,
+  "train_token_stats": {
+    "rows": 4096,
+    "truncated_rows": 1507,
+    "mean_encoded_tokens": 169.74,
+    "max_encoded_tokens": 256
+  },
+  "validation_token_stats": {
+    "rows": 1024,
+    "truncated_rows": 357,
+    "mean_encoded_tokens": 168.12,
+    "max_encoded_tokens": 256
+  },
+  "holdout_evaluated": false,
+  "versions": {
+    "torch": "2.13.0+rocm10.0.0",
+    "transformers": "4.56.2",
+    "tokenizers": "0.22.1",
+    "openpyxl": "3.1.5"
+  },
+  "gpu": {
+    "name": "AMD Radeon RX 7600",
+    "total_memory_bytes": 8573157376,
+    "peak_allocated_bytes": 2373045760,
+    "peak_reserved_bytes": 2602565632
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "optimizer_step": 128,
+      "train": {
+        "loss": 1.1087627694942057,
+        "accuracy": 0.357421875,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.0899215557146817,
+        "metrics": {
+          "accuracy": 0.3837890625,
+          "macro_f1": 0.3515047277169605,
+          "recall_by_class": {
+            "c1": 0.47987616099071206,
+            "c234": 0.5734870317002881,
+            "c5": 0.11016949152542373
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              155,
+              163,
+              5
+            ],
+            [
+              133,
+              199,
+              15
+            ],
+            [
+              108,
+              207,
+              39
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.784
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 256,
+      "train": {
+        "loss": 1.0846375520341098,
+        "accuracy": 0.3916015625,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.079532872652635,
+        "metrics": {
+          "accuracy": 0.3857421875,
+          "macro_f1": 0.37915321208822506,
+          "recall_by_class": {
+            "c1": 0.5479876160990712,
+            "c234": 0.3746397694524496,
+            "c5": 0.24858757062146894
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              177,
+              110,
+              36
+            ],
+            [
+              163,
+              130,
+              54
+            ],
+            [
+              122,
+              144,
+              88
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.84
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 384,
+      "train": {
+        "loss": 1.084789194748737,
+        "accuracy": 0.39453125,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.067664781352505,
+        "metrics": {
+          "accuracy": 0.41796875,
+          "macro_f1": 0.4124565961251901,
+          "recall_by_class": {
+            "c1": 0.5046439628482973,
+            "c234": 0.27953890489913547,
+            "c5": 0.4745762711864407
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              163,
+              71,
+              89
+            ],
+            [
+              136,
+              97,
+              114
+            ],
+            [
+              105,
+              81,
+              168
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.869
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 512,
+      "train": {
+        "loss": 1.0677908750949427,
+        "accuracy": 0.400390625,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.1009534006007016,
+        "metrics": {
+          "accuracy": 0.423828125,
+          "macro_f1": 0.36772186698022136,
+          "recall_by_class": {
+            "c1": 0.2724458204334365,
+            "c234": 0.13544668587896252,
+            "c5": 0.844632768361582
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              88,
+              28,
+              207
+            ],
+            [
+              61,
+              47,
+              239
+            ],
+            [
+              39,
+              16,
+              299
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.772
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 640,
+      "train": {
+        "loss": 1.0146027260343544,
+        "accuracy": 0.4619140625,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.103260789765045,
+        "metrics": {
+          "accuracy": 0.4296875,
+          "macro_f1": 0.3871905786619692,
+          "recall_by_class": {
+            "c1": 0.12074303405572756,
+            "c234": 0.4812680115273775,
+            "c5": 0.6610169491525424
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              39,
+              142,
+              142
+            ],
+            [
+              20,
+              167,
+              160
+            ],
+            [
+              19,
+              101,
+              234
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.724
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 768,
+      "train": {
+        "loss": 1.01236838666955,
+        "accuracy": 0.4697265625,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.1085242880508304,
+        "metrics": {
+          "accuracy": 0.4169921875,
+          "macro_f1": 0.3687178080197044,
+          "recall_by_class": {
+            "c1": 0.22291021671826625,
+            "c234": 0.19020172910662825,
+            "c5": 0.8163841807909604
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              72,
+              55,
+              196
+            ],
+            [
+              49,
+              66,
+              232
+            ],
+            [
+              28,
+              37,
+              289
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.791
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 896,
+      "train": {
+        "loss": 1.0327220282633789,
+        "accuracy": 0.4560546875,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.058188071474433,
+        "metrics": {
+          "accuracy": 0.4521484375,
+          "macro_f1": 0.44132620336808825,
+          "recall_by_class": {
+            "c1": 0.28173374613003094,
+            "c234": 0.484149855907781,
+            "c5": 0.576271186440678
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              91,
+              139,
+              93
+            ],
+            [
+              50,
+              168,
+              129
+            ],
+            [
+              40,
+              110,
+              204
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.833
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 1024,
+      "train": {
+        "loss": 1.0172252938500606,
+        "accuracy": 0.482421875,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.0825934365857393,
+        "metrics": {
+          "accuracy": 0.4111328125,
+          "macro_f1": 0.39808401174824076,
+          "recall_by_class": {
+            "c1": 0.2724458204334365,
+            "c234": 0.6397694524495677,
+            "c5": 0.3135593220338983
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              88,
+              202,
+              33
+            ],
+            [
+              68,
+              222,
+              57
+            ],
+            [
+              44,
+              199,
+              111
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.791
+      }
+    }
+  ],
+  "best_optimizer_step": 896,
+  "best_validation_accuracy": 0.4521484375,
+  "completed_optimizer_steps": 1024,
+  "planned_optimizer_steps": 1024,
+  "completed_epochs": 2.0,
+  "early_stopped": false,
+  "train_micro_seconds": 540.742,
+  "evaluation_seconds": 190.404,
+  "checkpoint_save_seconds": 2.069,
+  "checkpoint": "models\\bert_stage4\\stage4_headtail256_lr2e5_20260924_1817\\best",
+  "best_validation_macro_f1": 0.44132620336808825,
+  "checkpoint_reload": {
+    "logits_shape": [
+      5,
+      3
+    ],
+    "all_finite": true,
+    "predicted_labels": [
+      "c5",
+      "c234",
+      "c5",
+      "c5",
+      "c234"
+    ]
+  },
+  "total_wall_seconds": 742.647
+}

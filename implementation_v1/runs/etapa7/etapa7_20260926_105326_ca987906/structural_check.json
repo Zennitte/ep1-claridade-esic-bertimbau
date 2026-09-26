@@ -1,0 +1,27 @@
+{
+  "run_id": "etapa7_20260926_105326_ca987906",
+  "output_file": "C:/Users/KABUM/Documents/BERT- Fine/outputs/etapa7_20260926_105326_ca987906/test1_predito.xlsx",
+  "output_sha256": "4e6e149ad9f9407b51890ee0c4e31a09589568d090e765293864945ee7e24a8c",
+  "sheets": 1,
+  "sheet_name": "test1",
+  "rows": 900,
+  "columns": [
+    "resp_text",
+    "clarity"
+  ],
+  "resp_text_unchanged": true,
+  "prediction_cells_filled": 900,
+  "prediction_classes": [
+    "c1",
+    "c234",
+    "c5"
+  ],
+  "sample_first_5": [
+    "c234",
+    "c234",
+    "c5",
+    "c1",
+    "c1"
+  ],
+  "output_size_bytes": 293460
+}

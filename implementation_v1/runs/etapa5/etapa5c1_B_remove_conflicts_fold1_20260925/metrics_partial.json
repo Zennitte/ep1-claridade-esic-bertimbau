@@ -1,0 +1,454 @@
+{
+  "run_id": "etapa5c1_B_remove_conflicts_fold1_20260925",
+  "created_utc": "2026-09-25T14:48:14.867319+00:00",
+  "candidate": {
+    "id": "start512_lr2e5",
+    "representation": "start",
+    "max_length": 512,
+    "learning_rate": 2e-05,
+    "hypothesis": "Uma janela maior preserva mais respostas sem truncamento, a custo de tempo e memória."
+  },
+  "config": {
+    "model_id": "neuralmind/bert-base-portuguese-cased",
+    "split_id": "grouped_v1_seed_20260924",
+    "seed": 20260924,
+    "fold": 1,
+    "labels": [
+      "c1",
+      "c234",
+      "c5"
+    ],
+    "train_rows": 4096,
+    "validation_rows": 1024,
+    "max_epochs": 2,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "weight_decay": 0.01,
+    "eval_every_optimizer_steps": 384,
+    "early_stopping_min_steps": 512,
+    "early_stopping_patience_evaluations": 3,
+    "candidates": [
+      {
+        "id": "start256_lr2e5",
+        "representation": "start",
+        "max_length": 256,
+        "learning_rate": 2e-05,
+        "hypothesis": "Referência para a triagem, mantendo a janela e a taxa da Etapa 3."
+      },
+      {
+        "id": "headtail256_lr2e5",
+        "representation": "head_tail",
+        "max_length": 256,
+        "learning_rate": 2e-05,
+        "hypothesis": "O fim da resposta pode conter a informação decisiva omitida pelo truncamento inicial."
+      },
+      {
+        "id": "start512_lr2e5",
+        "representation": "start",
+        "max_length": 512,
+        "learning_rate": 2e-05,
+        "hypothesis": "Uma janela maior preserva mais respostas sem truncamento, a custo de tempo e memória."
+      },
+      {
+        "id": "start256_lr3e5",
+        "representation": "start",
+        "max_length": 256,
+        "learning_rate": 3e-05,
+        "hypothesis": "Uma taxa um pouco maior pode acelerar o aprendizado observado como lento na Etapa 3."
+      },
+      {
+        "id": "headtail256_lr3e5",
+        "representation": "head_tail",
+        "max_length": 256,
+        "learning_rate": 3e-05,
+        "hypothesis": "Verifica se a taxa maior também melhora a representação início + fim na janela de 256 tokens."
+      },
+      {
+        "id": "headtail512_lr2e5",
+        "representation": "head_tail",
+        "max_length": 512,
+        "learning_rate": 2e-05,
+        "hypothesis": "Verifica se início + fim aproveita a janela de 512 tokens melhor que o truncamento inicial."
+      },
+      {
+        "id": "start512_lr3e5",
+        "representation": "start",
+        "max_length": 512,
+        "learning_rate": 3e-05,
+        "hypothesis": "Verifica a interação da taxa maior com a janela inicial de 512 tokens."
+      },
+      {
+        "id": "headtail512_lr3e5",
+        "representation": "head_tail",
+        "max_length": 512,
+        "learning_rate": 3e-05,
+        "hypothesis": "Completa a comparação entre representação, comprimento e taxa de aprendizado."
+      }
+    ]
+  },
+  "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+  "split_id": "grouped_v1_seed_20260924",
+  "split_sha256": "aa9c99a79ccccc3655399761c53098f5fd3d770c9aa6c8b68be29c49eba3586b",
+  "subset_id": "conflict_B_remove_conflicts",
+  "subset_sha256": "ed567c07bc1188e7a9750cddb19da655693fed11cc8103492294a4838200c8df",
+  "train_indices_manifest": {
+    "path": "data\\stage5_conflict_ablation\\fold1_remove_conflicts.json",
+    "sha256": "ed567c07bc1188e7a9750cddb19da655693fed11cc8103492294a4838200c8df",
+    "variant_id": "B_remove_conflicts",
+    "retained_train_count": 10265,
+    "removed_train_count": 1223,
+    "removed_train_percent": 10.645891
+  },
+  "full_fold": true,
+  "train_rows": 10265,
+  "validation_rows": 5580,
+  "train_token_stats": {
+    "rows": 10265,
+    "truncated_rows": 1228,
+    "mean_encoded_tokens": 228.97,
+    "max_encoded_tokens": 512
+  },
+  "validation_token_stats": {
+    "rows": 5580,
+    "truncated_rows": 584,
+    "mean_encoded_tokens": 217.96,
+    "max_encoded_tokens": 512
+  },
+  "holdout_evaluated": false,
+  "versions": {
+    "torch": "2.13.0+rocm10.0.0",
+    "transformers": "4.56.2",
+    "tokenizers": "0.22.1",
+    "openpyxl": "3.1.5"
+  },
+  "gpu": {
+    "name": "AMD Radeon RX 7600",
+    "total_memory_bytes": 8573157376
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "optimizer_step": 384,
+      "train": {
+        "loss": 1.0916208383472015,
+        "accuracy": 0.3857421875,
+        "rows_seen_since_last_eval": 3072
+      },
+      "validation": {
+        "loss": 1.0800224384953898,
+        "metrics": {
+          "accuracy": 0.3818996415770609,
+          "macro_f1": 0.31927589485349434,
+          "recall_by_class": {
+            "c1": 0.05233219567690557,
+            "c234": 0.7211640211640211,
+            "c5": 0.3498964803312629
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              92,
+              1246,
+              420
+            ],
+            [
+              57,
+              1363,
+              470
+            ],
+            [
+              35,
+              1221,
+              676
+            ]
+          ]
+        },
+        "rows": 5580,
+        "seconds": 223.673
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 768,
+      "train": {
+        "loss": 1.068739641457796,
+        "accuracy": 0.4296875,
+        "rows_seen_since_last_eval": 3072
+      },
+      "validation": {
+        "loss": 1.0811044507983765,
+        "metrics": {
+          "accuracy": 0.41093189964157706,
+          "macro_f1": 0.3899022074524998,
+          "recall_by_class": {
+            "c1": 0.7150170648464164,
+            "c234": 0.2105820105820106,
+            "c5": 0.3302277432712215
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              1257,
+              238,
+              263
+            ],
+            [
+              1092,
+              398,
+              400
+            ],
+            [
+              863,
+              431,
+              638
+            ]
+          ]
+        },
+        "rows": 5580,
+        "seconds": 223.688
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 1152,
+      "train": {
+        "loss": 1.0588619929233876,
+        "accuracy": 0.4283854166666667,
+        "rows_seen_since_last_eval": 3072
+      },
+      "validation": {
+        "loss": 1.0663368467361696,
+        "metrics": {
+          "accuracy": 0.40770609318996415,
+          "macro_f1": 0.3553413434118033,
+          "recall_by_class": {
+            "c1": 0.08191126279863481,
+            "c234": 0.7164021164021164,
+            "c5": 0.40217391304347827
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              144,
+              1285,
+              329
+            ],
+            [
+              61,
+              1354,
+              475
+            ],
+            [
+              46,
+              1109,
+              777
+            ]
+          ]
+        },
+        "rows": 5580,
+        "seconds": 223.94
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 1283,
+      "train": {
+        "loss": 1.046169338790515,
+        "accuracy": 0.44083969465648853,
+        "rows_seen_since_last_eval": 1048
+      },
+      "validation": {
+        "loss": 1.0878397044315133,
+        "metrics": {
+          "accuracy": 0.42777777777777776,
+          "macro_f1": 0.39666590249737155,
+          "recall_by_class": {
+            "c1": 0.23833902161547213,
+            "c234": 0.27724867724867724,
+            "c5": 0.7474120082815735
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              419,
+              536,
+              803
+            ],
+            [
+              237,
+              524,
+              1129
+            ],
+            [
+              139,
+              349,
+              1444
+            ]
+          ]
+        },
+        "rows": 5580,
+        "seconds": 223.852
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 1536,
+      "train": {
+        "loss": 0.9942112452692901,
+        "accuracy": 0.5074110671936759,
+        "rows_seen_since_last_eval": 2024
+      },
+      "validation": {
+        "loss": 1.0901904010644523,
+        "metrics": {
+          "accuracy": 0.4349462365591398,
+          "macro_f1": 0.4282953901168655,
+          "recall_by_class": {
+            "c1": 0.6336746302616609,
+            "c234": 0.31164021164021166,
+            "c5": 0.3747412008281574
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              1114,
+              389,
+              255
+            ],
+            [
+              889,
+              589,
+              412
+            ],
+            [
+              637,
+              571,
+              724
+            ]
+          ]
+        },
+        "rows": 5580,
+        "seconds": 223.715
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 1920,
+      "train": {
+        "loss": 1.000590717594605,
+        "accuracy": 0.4879557291666667,
+        "rows_seen_since_last_eval": 3072
+      },
+      "validation": {
+        "loss": 1.0731721925692745,
+        "metrics": {
+          "accuracy": 0.44193548387096776,
+          "macro_f1": 0.442245039945171,
+          "recall_by_class": {
+            "c1": 0.4459613196814562,
+            "c234": 0.391005291005291,
+            "c5": 0.4880952380952381
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              784,
+              551,
+              423
+            ],
+            [
+              568,
+              739,
+              583
+            ],
+            [
+              331,
+              658,
+              943
+            ]
+          ]
+        },
+        "rows": 5580,
+        "seconds": 223.359
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 2304,
+      "train": {
+        "loss": 0.9774910382499608,
+        "accuracy": 0.5029296875,
+        "rows_seen_since_last_eval": 3072
+      },
+      "validation": {
+        "loss": 1.094173140893273,
+        "metrics": {
+          "accuracy": 0.45089605734767024,
+          "macro_f1": 0.442548553657282,
+          "recall_by_class": {
+            "c1": 0.6023890784982935,
+            "c234": 0.2777777777777778,
+            "c5": 0.4824016563146998
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              1059,
+              322,
+              377
+            ],
+            [
+              808,
+              525,
+              557
+            ],
+            [
+              545,
+              455,
+              932
+            ]
+          ]
+        },
+        "rows": 5580,
+        "seconds": 223.296
+      }
+    },
+    {
+      "epoch": 2,
+      "optimizer_step": 2566,
+      "train": {
+        "loss": 1.0077466616648754,
+        "accuracy": 0.4780534351145038,
+        "rows_seen_since_last_eval": 2096
+      },
+      "validation": {
+        "loss": 1.0655333107944884,
+        "metrics": {
+          "accuracy": 0.4304659498207885,
+          "macro_f1": 0.41644618568489383,
+          "recall_by_class": {
+            "c1": 0.2895335608646189,
+            "c234": 0.6756613756613756,
+            "c5": 0.3188405797101449
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              509,
+              1058,
+              191
+            ],
+            [
+              303,
+              1277,
+              310
+            ],
+            [
+              210,
+              1106,
+              616
+            ]
+          ]
+        },
+        "rows": 5580,
+        "seconds": 223.149
+      }
+    }
+  ],
+  "effective_micro_batches_per_epoch": 5132,
+  "dropped_train_rows_per_epoch": 1,
+  "best_optimizer_step": 2304,
+  "best_validation_accuracy": 0.45089605734767024
+}

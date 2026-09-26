@@ -1,0 +1,8 @@
+{
+  "run_id": "etapa5c_start512_lr2e5_fold1_20260924_2359",
+  "candidate": "start512_lr2e5",
+  "error_type": "AcceleratorError",
+  "error": "CUDA error: device kernel image is invalid\nSearch for `hipErrorInvalidImage' in https://rocm.docs.amd.com/projects/HIP/en/latest/index.html for more information.\nFor more detailed error information, run with CUDA_LOG_FILE=stderr\nDevice-side assertion tracking was not enabled by user.",
+  "completed_optimizer_steps": 0,
+  "elapsed_seconds": 6.123
+}

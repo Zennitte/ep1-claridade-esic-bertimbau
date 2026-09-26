@@ -1,0 +1,66 @@
+{
+  "created_utc": "2026-09-24T21:48:22.158682+00:00",
+  "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+  "split_id": "grouped_v1_seed_20260924",
+  "subset_id": "stage4_fold1_stratified_4096_1024_seed_20260924",
+  "subset_sha256": "d66f12f5798eb6f4d5567d14ac1c61a1077b37e312be229c86c844003f1a092a",
+  "C": 0.5,
+  "train_rows": 4096,
+  "validation_rows": 1024,
+  "train": {
+    "accuracy": 0.74609375,
+    "macro_f1": 0.7447401361241072,
+    "recall_by_class": {
+      "c1": 0.6969930609097919,
+      "c234": 0.7214285714285714,
+      "c5": 0.8162973552537527
+    },
+    "confusion_matrix_rows_true_columns_predicted": [
+      [
+        904,
+        184,
+        209
+      ],
+      [
+        177,
+        1010,
+        213
+      ],
+      [
+        123,
+        134,
+        1142
+      ]
+    ]
+  },
+  "validation": {
+    "accuracy": 0.4423828125,
+    "macro_f1": 0.43900128266517785,
+    "recall_by_class": {
+      "c1": 0.38080495356037153,
+      "c234": 0.3861671469740634,
+      "c5": 0.5536723163841808
+    },
+    "confusion_matrix_rows_true_columns_predicted": [
+      [
+        123,
+        103,
+        97
+      ],
+      [
+        90,
+        134,
+        123
+      ],
+      [
+        45,
+        113,
+        196
+      ]
+    ]
+  },
+  "vocabulary_size": 34586,
+  "wall_seconds": 1.875,
+  "checkpoint": "models\\baseline\\stage4_subset_c0_5.joblib",
+  "holdout_evaluated": false
+}

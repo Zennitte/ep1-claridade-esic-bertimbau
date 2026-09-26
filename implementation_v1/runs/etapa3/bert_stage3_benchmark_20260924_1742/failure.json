@@ -1,0 +1,9 @@
+{
+  "run_id": "bert_stage3_benchmark_20260924_1742",
+  "status": "failed_before_first_forward",
+  "environment": "Codex isolated command sandbox on Windows",
+  "error": "torch.AcceleratorError: CUDA error: device kernel image is invalid (hipErrorInvalidImage)",
+  "diagnosis": "The same script and model completed a benchmark outside the isolated sandbox in run bert_stage3_benchmark_20260924_1748. The stage-0 small GPU test also failed when repeated inside the sandbox. This points to isolation of GPU kernel execution rather than BERT memory capacity.",
+  "gpu_training_seconds": 0,
+  "checkpoint": null
+}

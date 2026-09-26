@@ -1,0 +1,30 @@
+{
+  "seed": 20260924,
+  "split_id": "grouped_v1_seed_20260924",
+  "classes": [
+    "c1",
+    "c234",
+    "c5"
+  ],
+  "vectorizer": {
+    "analyzer": "word",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 3,
+    "max_features": 100000,
+    "sublinear_tf": true,
+    "lowercase": true,
+    "norm": "l2"
+  },
+  "classifier": {
+    "solver": "lbfgs",
+    "max_iter": 400,
+    "C_values": [
+      0.5,
+      2.0
+    ]
+  },
+  "cpu_threads": 4
+}

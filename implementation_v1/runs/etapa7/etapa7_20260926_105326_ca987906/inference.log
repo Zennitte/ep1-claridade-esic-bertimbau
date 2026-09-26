@@ -1,0 +1,9 @@
+rows=900
+device=AMD Radeon RX 7600
+batch_size=8
+max_length=512
+wall_seconds=43.450
+predicted_counts={'c1': 319, 'c234': 176, 'c5': 405}
+test_labels_used=false
+source_sha256=e626f030d4bf2be889fc41dd1fe9b81fb31f1f50f3ace50530d658683260449f
+model_sha256=d27151969c8e05a7d7155312e09d20cca8a44b5e1deaf2f7a871e5a49e963a56

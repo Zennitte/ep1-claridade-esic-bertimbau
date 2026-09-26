@@ -1,0 +1,108 @@
+{
+  "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+  "split_id": "grouped_v1_seed_20260924",
+  "fold": 1,
+  "reference_run": "etapa5c_start512_lr2e5_fold1_20260924_2359_unsandboxed",
+  "checkpoint": "models\\bert_stage5\\etapa5c_start512_lr2e5_fold1_20260924_2359_unsandboxed\\best",
+  "device": "cuda:0",
+  "max_length": 512,
+  "holdout_evaluated": false,
+  "train": {
+    "rows": 11488,
+    "accuracy": 0.5902681058495822,
+    "macro_f1": 0.5838509952848189,
+    "weighted_f1": 0.5828531898852976,
+    "confusion_matrix_rows_true_cols_pred": [
+      [
+        2374,
+        737,
+        526
+      ],
+      [
+        1164,
+        1606,
+        1157
+      ],
+      [
+        452,
+        671,
+        2801
+      ]
+    ],
+    "by_class": {
+      "c1": {
+        "support": 3637,
+        "predicted_count": 3990,
+        "precision": 0.5949874686716792,
+        "recall": 0.652735771240033,
+        "f1": 0.6225252392814999
+      },
+      "c234": {
+        "support": 3927,
+        "predicted_count": 3014,
+        "precision": 0.5328467153284672,
+        "recall": 0.40896358543417366,
+        "f1": 0.46275752773375595
+      },
+      "c5": {
+        "support": 3924,
+        "predicted_count": 4484,
+        "precision": 0.6246654772524531,
+        "recall": 0.7138124362895005,
+        "f1": 0.6662702188392007
+      }
+    },
+    "cross_entropy_loss": 0.884235507503157,
+    "mean_encoded_tokens": 220.35201949860723,
+    "truncated_rows_512": 1259
+  },
+  "validation": {
+    "rows": 5580,
+    "accuracy": 0.4514336917562724,
+    "macro_f1": 0.44507214860372296,
+    "weighted_f1": 0.4447870533108227,
+    "confusion_matrix_rows_true_cols_pred": [
+      [
+        860,
+        404,
+        494
+      ],
+      [
+        594,
+        571,
+        725
+      ],
+      [
+        380,
+        464,
+        1088
+      ]
+    ],
+    "by_class": {
+      "c1": {
+        "support": 1758,
+        "predicted_count": 1834,
+        "precision": 0.46892039258451473,
+        "recall": 0.4891922639362912,
+        "f1": 0.47884187082405344
+      },
+      "c234": {
+        "support": 1890,
+        "predicted_count": 1439,
+        "precision": 0.3968033356497568,
+        "recall": 0.3021164021164021,
+        "f1": 0.343045959747672
+      },
+      "c5": {
+        "support": 1932,
+        "predicted_count": 2307,
+        "precision": 0.4716081491114001,
+        "recall": 0.5631469979296067,
+        "f1": 0.5133286152394433
+      }
+    },
+    "cross_entropy_loss": 1.0654508253739725,
+    "mean_encoded_tokens": 217.96039426523296,
+    "truncated_rows_512": 584
+  }
+}

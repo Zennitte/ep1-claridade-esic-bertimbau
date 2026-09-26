@@ -1,0 +1,132 @@
+{
+  "stage": 5,
+  "subdivision": "5e",
+  "status": "frozen_before_stage5f",
+  "frozen_local": "2026-09-25 23:27 America/Sao_Paulo",
+  "selection_basis": {
+    "report": "reports/etapa5d_confirmation.md",
+    "summary": "runs/etapa5/stage5d_confirmation_summary.json",
+    "rule": "highest mean grouped-fold validation accuracy; macro-F1 breaks an exact tie",
+    "selected_candidate": "start512_lr2e5",
+    "selection_result": {
+      "mean_accuracy": 0.4500675425709804,
+      "mean_macro_f1": 0.4469040338498563,
+      "baseline_mean_accuracy": 0.44705062973833737,
+      "baseline_mean_macro_f1": 0.44453111282773666,
+      "accuracy_difference_vs_headtail": 0.0009797885951429164,
+      "macro_f1_difference_vs_headtail": -0.0010178673824288165
+    },
+    "caveat": "differences between finalists are small; no statistical superiority is claimed"
+  },
+  "source": {
+    "path": "train.xlsx",
+    "sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+    "sheet": "train",
+    "text_column": "resp_text",
+    "target_column": "clarity",
+    "rows": 20092,
+    "class_counts": {
+      "c1": 6347,
+      "c234": 6853,
+      "c5": 6892
+    }
+  },
+  "data_policy": {
+    "id": "original_keep_all_labels_v1",
+    "rule": "retain every original training row and its original label; do not remove duplicates or conflicting groups; never relabel",
+    "expected_rows_after_stage5f": 20092,
+    "expected_class_counts": {
+      "c1": 6347,
+      "c234": 6853,
+      "c5": 6892
+    },
+    "known_conflicts": {
+      "grouping_basis": "same normalized text as stage 1",
+      "groups": 316,
+      "rows": 1975,
+      "treatment": "preserve all rows and labels"
+    },
+    "group_key": {
+      "normalization": "Unicode NFC, casefold, split/join all whitespace",
+      "hash": "SHA-256 of normalized UTF-8 text",
+      "near_duplicate_matching": false
+    },
+    "application": "after the one-time stage 5f audit, train on all rows from train.xlsx, including the audited holdout rows; do not use holdout results to revise this rule"
+  },
+  "model": {
+    "architecture": "BERTimbau Base for sequence classification",
+    "pretrained_model_id": "neuralmind/bert-base-portuguese-cased",
+    "pretrained_model_revision": "94d69c95f98f7d5b2a8700c420230ae10def0baa",
+    "initialization": "fresh 3-class classification head on the pretrained base; do not initialize from a fold-fine-tuned checkpoint",
+    "tokenizer_id": "neuralmind/bert-base-portuguese-cased",
+    "tokenizer_revision": "94d69c95f98f7d5b2a8700c420230ae10def0baa",
+    "revision_source": "local Hugging Face cache refs/main at freeze time; pin this revision and use local_files_only during final training",
+    "representation": "start",
+    "max_length_including_special_tokens": 512,
+    "input_preprocessing": "read resp_text as in src/bert_stage3.py; preserve original text; cast non-string values with str(); tokenizer adds special tokens and truncates from the end; dynamic padding within each batch",
+    "num_labels": 3,
+    "label_to_id": {
+      "c1": 0,
+      "c234": 1,
+      "c5": 2
+    },
+    "id_to_label": {
+      "0": "c1",
+      "1": "c234",
+      "2": "c5"
+    },
+    "loss": "cross entropy; no class weights or label smoothing"
+  },
+  "training": {
+    "seed": 20260924,
+    "optimizer": "torch.optim.AdamW",
+    "learning_rate": 2e-05,
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_epsilon": 1e-08,
+    "weight_decay": 0.01,
+    "scheduler": "none; constant learning rate",
+    "warmup_steps": 0,
+    "gradient_clip_norm": 1.0,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "effective_batch_size": 8,
+    "shuffle": true,
+    "shuffle_generator_seed": 20260924,
+    "num_workers": 0,
+    "optimizer_steps_per_full_epoch": 2511,
+    "dropped_rows_from_incomplete_accumulation_per_complete_epoch": 4,
+    "target_optimizer_steps": 4523,
+    "target_epoch_equivalents": 1.8011005324032865,
+    "max_epochs_as_guard": 2,
+    "duration_derivation": {
+      "selected_start512_best_epochs_by_fold": {
+        "fold_1": 1.871866295264624,
+        "fold_2": 1.610062893081761,
+        "fold_3": 1.9213724088634738
+      },
+      "mean_best_epoch_equivalents": 1.8011005324032865,
+      "full_data_steps_per_epoch": 2511,
+      "rounded_fixed_steps": 4523
+    },
+    "validation_during_final_fit": false,
+    "early_stopping": false,
+    "checkpoint_rule": "save the final model at optimizer step 4523; no model selection during the final fit",
+    "incomplete_gradient_accumulation": "discard at each complete epoch boundary; the fixed target is an optimizer step, so no partial accumulation is carried across epochs"
+  },
+  "artifacts": {
+    "config": "configs/bert_stage5_final.json",
+    "final_model_directory": "models/bert_final/",
+    "run_metrics_directory": "runs/etapa6/",
+    "training_log_directory": "reports/etapa6/"
+  },
+  "software_reference": {
+    "torch": "2.13.0+rocm10.0.0",
+    "transformers": "4.56.2",
+    "tokenizers": "0.22.1",
+    "environment": "Windows 11, AMD Radeon RX 7600"
+  },
+  "holdout_evaluated": false
+}

@@ -1,0 +1,255 @@
+{
+  "run_id": "stage4_start256_lr2e5_20260924_1810",
+  "created_utc": "2026-09-24T21:07:42.227158+00:00",
+  "candidate": {
+    "id": "start256_lr2e5",
+    "representation": "start",
+    "max_length": 256,
+    "learning_rate": 2e-05,
+    "hypothesis": "Referência para a triagem, mantendo a janela e a taxa da Etapa 3."
+  },
+  "config": {
+    "model_id": "neuralmind/bert-base-portuguese-cased",
+    "split_id": "grouped_v1_seed_20260924",
+    "seed": 20260924,
+    "fold": 1,
+    "labels": [
+      "c1",
+      "c234",
+      "c5"
+    ],
+    "train_rows": 4096,
+    "validation_rows": 1024,
+    "max_epochs": 2,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "weight_decay": 0.01,
+    "eval_every_optimizer_steps": 128,
+    "early_stopping_min_steps": 512,
+    "early_stopping_patience_evaluations": 3,
+    "candidates": [
+      {
+        "id": "start256_lr2e5",
+        "representation": "start",
+        "max_length": 256,
+        "learning_rate": 2e-05,
+        "hypothesis": "Referência para a triagem, mantendo a janela e a taxa da Etapa 3."
+      },
+      {
+        "id": "headtail256_lr2e5",
+        "representation": "head_tail",
+        "max_length": 256,
+        "learning_rate": 2e-05,
+        "hypothesis": "O fim da resposta pode conter a informação decisiva omitida pelo truncamento inicial."
+      },
+      {
+        "id": "start512_lr2e5",
+        "representation": "start",
+        "max_length": 512,
+        "learning_rate": 2e-05,
+        "hypothesis": "Uma janela maior preserva mais respostas sem truncamento, a custo de tempo e memória."
+      },
+      {
+        "id": "start256_lr3e5",
+        "representation": "start",
+        "max_length": 256,
+        "learning_rate": 3e-05,
+        "hypothesis": "Uma taxa um pouco maior pode acelerar o aprendizado observado como lento na Etapa 3."
+      }
+    ]
+  },
+  "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+  "split_id": "grouped_v1_seed_20260924",
+  "split_sha256": "aa9c99a79ccccc3655399761c53098f5fd3d770c9aa6c8b68be29c49eba3586b",
+  "subset_id": "stage4_fold1_stratified_4096_1024_seed_20260924",
+  "subset_sha256": "d66f12f5798eb6f4d5567d14ac1c61a1077b37e312be229c86c844003f1a092a",
+  "train_rows": 4096,
+  "validation_rows": 1024,
+  "train_token_stats": {
+    "rows": 4096,
+    "truncated_rows": 1507,
+    "mean_encoded_tokens": 169.74,
+    "max_encoded_tokens": 256
+  },
+  "validation_token_stats": {
+    "rows": 1024,
+    "truncated_rows": 357,
+    "mean_encoded_tokens": 168.12,
+    "max_encoded_tokens": 256
+  },
+  "holdout_evaluated": false,
+  "versions": {
+    "torch": "2.13.0+rocm10.0.0",
+    "transformers": "4.56.2",
+    "tokenizers": "0.22.1",
+    "openpyxl": "3.1.5"
+  },
+  "gpu": {
+    "name": "AMD Radeon RX 7600",
+    "total_memory_bytes": 8573157376
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "optimizer_step": 128,
+      "train": {
+        "loss": 1.1037776476005092,
+        "accuracy": 0.3857421875,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.0776644707657397,
+        "metrics": {
+          "accuracy": 0.416015625,
+          "macro_f1": 0.41366490908944,
+          "recall_by_class": {
+            "c1": 0.38390092879256965,
+            "c234": 0.5187319884726225,
+            "c5": 0.3446327683615819
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              124,
+              140,
+              59
+            ],
+            [
+              83,
+              180,
+              84
+            ],
+            [
+              75,
+              157,
+              122
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.754
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 256,
+      "train": {
+        "loss": 1.0865717061096802,
+        "accuracy": 0.3916015625,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.0783922907430679,
+        "metrics": {
+          "accuracy": 0.3876953125,
+          "macro_f1": 0.37940667095916386,
+          "recall_by_class": {
+            "c1": 0.5913312693498453,
+            "c234": 0.276657060518732,
+            "c5": 0.3107344632768362
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              191,
+              78,
+              54
+            ],
+            [
+              179,
+              96,
+              72
+            ],
+            [
+              150,
+              94,
+              110
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.76
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 384,
+      "train": {
+        "loss": 1.0869555289391428,
+        "accuracy": 0.392578125,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.0661929456982762,
+        "metrics": {
+          "accuracy": 0.4091796875,
+          "macro_f1": 0.39853238813642927,
+          "recall_by_class": {
+            "c1": 0.4984520123839009,
+            "c234": 0.2276657060518732,
+            "c5": 0.5056497175141242
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              161,
+              57,
+              105
+            ],
+            [
+              141,
+              79,
+              127
+            ],
+            [
+              97,
+              78,
+              179
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.766
+      }
+    },
+    {
+      "epoch": 1,
+      "optimizer_step": 512,
+      "train": {
+        "loss": 1.0587753260042518,
+        "accuracy": 0.4248046875,
+        "rows_seen_since_last_eval": 1024
+      },
+      "validation": {
+        "loss": 1.099229495273903,
+        "metrics": {
+          "accuracy": 0.412109375,
+          "macro_f1": 0.34144342139706757,
+          "recall_by_class": {
+            "c1": 0.29102167182662536,
+            "c234": 0.07204610951008646,
+            "c5": 0.8559322033898306
+          },
+          "confusion_matrix_rows_true_columns_predicted": [
+            [
+              94,
+              24,
+              205
+            ],
+            [
+              70,
+              25,
+              252
+            ],
+            [
+              38,
+              13,
+              303
+            ]
+          ]
+        },
+        "rows": 1024,
+        "seconds": 23.829
+      }
+    }
+  ],
+  "best_optimizer_step": 128,
+  "best_validation_accuracy": 0.416015625
+}

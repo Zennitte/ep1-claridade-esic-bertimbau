@@ -1,0 +1,79 @@
+{"kind":"deck","id":"pr/v7mnab","name":"Deck"}
+{"kind":"layout","layoutId":"aab50f6b-b9ef-4338-9a3a-d3adf2f4fd24","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"de3845ec-2868-46fc-a28e-0643279edce9","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/xbl0bs","slide":1,"title":"Clareza das respostas e-SIC","textShapes":4}
+{"kind":"textbox","id":"sh/tcbe9oja","slide":1,"text":"Clareza das respostas e-SIC","textPreview":"Clareza das respostas e-SIC","textChars":27,"textLines":1,"bbox":[72,150,1120,90]}
+{"kind":"textbox","id":"sh/6pkvy90j","slide":1,"text":"Classificação em três classes com BERTimbau Base","textPreview":"Classificação em três classes com BERTimbau Base","textChars":48,"textLines":1,"bbox":[76,255,1070,55]}
+{"kind":"textbox","id":"sh/ratw7e14","slide":1,"text":"EP1  •  ACH2118","textPreview":"EP1  •  ACH2118","textChars":15,"textLines":1,"bbox":[76,460,500,42]}
+{"kind":"textbox","id":"sh/4nidwjit","slide":1,"text":"[NOMES E NÚMEROS USP DOS INTEGRANTES]","textPreview":"[NOMES E NÚMEROS USP DOS INTEGRANTES]","textChars":37,"textLines":1,"bbox":[76,514,1070,38]}
+{"kind":"notes","id":"nt/xbl0bs","slide":1,"text":"Apresentar a tarefa e os integrantes. Substituir os placeholders antes da apresentação. Fonte: enunciado do EP1 e relatório do projeto."}
+{"kind":"slide","id":"sl/m9ageu","slide":2,"title":"Tarefa e conjunto de dados","textShapes":7}
+{"kind":"textbox","id":"sh/6xozed87","slide":2,"text":"Tarefa e conjunto de dados","textPreview":"Tarefa e conjunto de dados","textChars":26,"textLines":1,"bbox":[64,45,1150,82]}
+{"kind":"textbox","id":"sh/d0fy9s7y","slide":2,"text":"2 / 8","textPreview":"2 / 8","textChars":5,"textLines":1,"bbox":[1150,654,65,25]}
+{"kind":"textbox","id":"sh/sz6hgnqd","slide":2,"text":"20.092","textPreview":"20.092","textChars":6,"textLines":1,"bbox":[80,155,410,100]}
+{"kind":"textbox","id":"sh/f2xgbipo","slide":2,"text":"respostas rotuladas para treino","textPreview":"respostas rotuladas para treino","textChars":31,"textLines":1,"bbox":[85,258,600,48]}
+{"kind":"textbox","id":"sh/e1ozix83","slide":2,"text":"c1: 6.347    c234: 6.853    c5: 6.892","textPreview":"c1: 6.347    c234: 6.853    c5: 6.892","textChars":37,"textLines":1,"bbox":[78,365,1090,50]}
+{"kind":"textbox","id":"sh/1ozyds7u","slide":2,"text":"900 respostas sem rótulo no arquivo de teste","textPreview":"900 respostas sem rótulo no arquivo de teste","textChars":44,"textLines":1,"bbox":[78,449,1090,50]}
+{"kind":"textbox","id":"sh/0nqhknq9","slide":2,"text":"A métrica de teste não pode ser calculada sem rótulos.","textPreview":"A métrica de teste não pode ser calculada sem rótulos.","textChars":54,"textLines":1,"bbox":[78,523,1090,50]}
+{"kind":"notes","id":"nt/m9ageu","slide":2,"text":"Fonte: reports/etapa1_audit.md e reports/etapa7_inferencia.md. Não apresentar distribuição de predições como acurácia."}
+{"kind":"slide","id":"sl/vte2rk","slide":3,"title":"Divisão e prevenção de vazamento","textShapes":9}
+{"kind":"textbox","id":"sh/436x4nax","slide":3,"text":"Divisão e prevenção de vazamento","textPreview":"Divisão e prevenção de vazamento","textChars":32,"textLines":1,"bbox":[64,45,1150,82]}
+{"kind":"textbox","id":"sh/32xwbitc","slide":3,"text":"3 / 8","textPreview":"3 / 8","textChars":5,"textLines":1,"bbox":[1150,654,65,25]}
+{"kind":"textbox","id":"sh/2hof2dsr","slide":3,"text":"17.068","textPreview":"17.068","textChars":6,"textLines":1,"bbox":[80,160,400,85]}
+{"kind":"textbox","id":"sh/hgfe9sbm","slide":3,"text":"desenvolvimento","textPreview":"desenvolvimento","textChars":15,"textLines":1,"bbox":[84,246,470,50]}
+{"kind":"textbox","id":"sh/gfmd0na1","slide":3,"text":"3.024","textPreview":"3.024","textChars":5,"textLines":1,"bbox":[720,160,400,85]}
+{"kind":"textbox","id":"sh/fedw7itg","slide":3,"text":"holdout externo","textPreview":"holdout externo","textChars":15,"textLines":1,"bbox":[724,246,450,50]}
+{"kind":"textbox","id":"sh/ud4vydsv","slide":3,"text":"Três folds internos com StratifiedGroupKFold","textPreview":"Três folds internos com StratifiedGroupKFold","textChars":44,"textLines":1,"bbox":[78,365,1090,50]}
+{"kind":"textbox","id":"sh/tcve58ba","slide":3,"text":"Textos equivalentes permanecem no mesmo grupo","textPreview":"Textos equivalentes permanecem no mesmo grupo","textChars":45,"textLines":1,"bbox":[78,445,1090,50]}
+{"kind":"textbox","id":"sh/sbmdw3ap","slide":3,"text":"Holdout consultado uma vez, após congelar a configuração","textPreview":"Holdout consultado uma vez, após congelar a configuração","textChars":56,"textLines":1,"bbox":[78,520,1090,50]}
+{"kind":"notes","id":"nt/vte2rk","slide":3,"text":"Fonte: reports/etapa1_audit.md e reports/etapa5f_holdout_audit.md. A normalização NFC, casefold e colapso de espaços foi usada somente para a chave de grupo."}
+{"kind":"slide","id":"sl/30gv85","slide":4,"title":"Busca e escolha do modelo","textShapes":8}
+{"kind":"textbox","id":"sh/dcvm18by","slide":4,"text":"Busca e escolha do modelo","textPreview":"Busca e escolha do modelo","textChars":25,"textLines":1,"bbox":[64,45,1150,82]}
+{"kind":"textbox","id":"sh/q9436tcn","slide":4,"text":"4 / 8","textPreview":"4 / 8","textChars":5,"textLines":1,"bbox":[1150,654,65,25]}
+{"kind":"textbox","id":"sh/rad4zyts","slide":4,"text":"BERTimbau Base com cabeça nova para c1, c234 e c5","textPreview":"BERTimbau Base com cabeça nova para c1, c234 e c5","textChars":49,"textLines":1,"bbox":[78,165,1090,50]}
+{"kind":"textbox","id":"sh/0z65c3up","slide":4,"text":"8 combinações: posição do texto, 256 ou 512 tokens,","textPreview":"8 combinações: posição do texto, 256 ou 512 tokens,","textChars":51,"textLines":1,"bbox":[78,265,1090,50]}
+{"kind":"textbox","id":"sh/10fm58ba","slide":4,"text":"taxa de 2 × 10⁻⁵ ou 3 × 10⁻⁵","textPreview":"taxa de 2 × 10⁻⁵ ou 3 × 10⁻⁵","textChars":28,"textLines":1,"bbox":[78,311,1090,50]}
+{"kind":"textbox","id":"sh/edo3atcj","slide":4,"text":"Escolhido","textPreview":"Escolhido","textChars":9,"textLines":1,"bbox":[80,410,330,55]}
+{"kind":"textbox","id":"sh/fyx43yt4","slide":4,"text":"início + 512 tokens + 2 × 10⁻⁵","textPreview":"início + 512 tokens + 2 × 10⁻⁵","textChars":30,"textLines":1,"bbox":[80,467,1060,65]}
+{"kind":"textbox","id":"sh/o365gnul","slide":4,"text":"Regra prévia: maior acurácia média nos três folds","textPreview":"Regra prévia: maior acurácia média nos três folds","textChars":49,"textLines":1,"bbox":[78,565,1090,50]}
+{"kind":"notes","id":"nt/30gv85","slide":4,"text":"Fontes: reports/etapa4_search.md e reports/etapa5e_final_spec.md. Não alegar superioridade estável com base na triagem inicial."}
+{"kind":"slide","id":"sl/cix65j","slide":5,"title":"Confirmação nos três folds","textShapes":7}
+{"kind":"textbox","id":"sh/hsny9kv2","slide":5,"text":"Confirmação nos três folds","textPreview":"Confirmação nos três folds","textChars":26,"textLines":1,"bbox":[64,45,1150,82]}
+{"kind":"textbox","id":"sh/upwzy5wb","slide":5,"text":"5 / 8","textPreview":"5 / 8","textChars":5,"textLines":1,"bbox":[1150,654,65,25]}
+{"kind":"textbox","id":"sh/fq5g7adw","slide":5,"text":"45,007%","textPreview":"45,007%","textChars":7,"textLines":1,"bbox":[80,160,500,100]}
+{"kind":"textbox","id":"sh/4vyh4fed","slide":5,"text":"acurácia média do BERTimbau","textPreview":"acurácia média do BERTimbau","textChars":27,"textLines":1,"bbox":[85,268,700,50]}
+{"kind":"textbox","id":"sh/pw7idkvy","slide":5,"text":"TF-IDF + regressão logística: 44,705%","textPreview":"TF-IDF + regressão logística: 44,705%","textChars":37,"textLines":1,"bbox":[78,379,1090,50]}
+{"kind":"textbox","id":"sh/2twz2pwn","slide":5,"text":"Diferença média: +0,302 ponto percentual","textPreview":"Diferença média: +0,302 ponto percentual","textChars":40,"textLines":1,"bbox":[78,447,1090,50]}
+{"kind":"textbox","id":"sh/3u5gbuds","slide":5,"text":"Variação entre folds maior que essa diferença","textPreview":"Variação entre folds maior que essa diferença","textChars":45,"textLines":1,"bbox":[78,524,1090,50]}
+{"kind":"notes","id":"nt/cix65j","slide":5,"text":"Fonte: reports/etapa5e_final_spec.md. A seleção por acurácia foi pré-fixada; o fold 3 ficou abaixo do baseline."}
+{"kind":"slide","id":"sl/i1x5rl","slide":6,"title":"Holdout na mesma divisão","textShapes":9}
+{"kind":"textbox","id":"sh/vut4nyl8","slide":6,"text":"Holdout na mesma divisão","textPreview":"Holdout na mesma divisão","textChars":24,"textLines":1,"bbox":[64,45,1150,82]}
+{"kind":"textbox","id":"sh/wv25w3md","slide":6,"text":"6 / 8","textPreview":"6 / 8","textChars":5,"textLines":1,"bbox":[1150,654,65,25]}
+{"kind":"textbox","id":"sh/xwbmpo3y","slide":6,"text":"45,966%","textPreview":"45,966%","textChars":7,"textLines":1,"bbox":[80,153,470,85]}
+{"kind":"textbox","id":"sh/mp0nq94b","slide":6,"text":"BERTimbau","textPreview":"BERTimbau","textChars":9,"textLines":1,"bbox":[85,243,350,42]}
+{"kind":"textbox","id":"sh/nq94jelw","slide":6,"text":"45,437%","textPreview":"45,437%","textChars":7,"textLines":1,"bbox":[710,153,470,85]}
+{"kind":"textbox","id":"sh/8r25sjmh","slide":6,"text":"TF-IDF + regressão logística","textPreview":"TF-IDF + regressão logística","textChars":28,"textLines":1,"bbox":[715,243,480,42]}
+{"kind":"textbox","id":"sh/9sbmlo32","slide":6,"text":"16 acertos adicionais para o BERT em 3.024 casos","textPreview":"16 acertos adicionais para o BERT em 3.024 casos","textChars":48,"textLines":1,"bbox":[78,365,1090,50]}
+{"kind":"textbox","id":"sh/6l4n2dkv","slide":6,"text":"Macro F1: BERT 44,523%; TF-IDF 45,056%","textPreview":"Macro F1: BERT 44,523%; TF-IDF 45,056%","textChars":38,"textLines":1,"bbox":[78,432,1090,50]}
+{"kind":"textbox","id":"sh/7mdovil0","slide":6,"text":"McNemar exato: p = 0,590","textPreview":"McNemar exato: p = 0,590","textChars":24,"textLines":1,"bbox":[78,501,1090,50]}
+{"kind":"notes","id":"nt/i1x5rl","slide":6,"text":"Fontes: reports/etapa5f_holdout_audit.md e reports/etapa5f_tfidf_holdout_comparison.md. A vantagem descritiva em acurácia é pequena; o TF-IDF obteve macro F1 maior."}
+{"kind":"slide","id":"sl/t6nrd8","slide":7,"title":"Treino final e inferência","textShapes":8}
+{"kind":"textbox","id":"sh/o3ytw3u5","slide":7,"text":"Treino final e inferência","textPreview":"Treino final e inferência","textChars":25,"textLines":1,"bbox":[64,45,1150,82]}
+{"kind":"textbox","id":"sh/32ps3ytk","slide":7,"text":"7 / 8","textPreview":"7 / 8","textChars":5,"textLines":1,"bbox":[1150,654,65,25]}
+{"kind":"textbox","id":"sh/21gbudcf","slide":7,"text":"20.092","textPreview":"20.092","textChars":6,"textLines":1,"bbox":[80,150,430,85]}
+{"kind":"textbox","id":"sh/107a18bu","slide":7,"text":"exemplos usados no ajuste final","textPreview":"exemplos usados no ajuste final","textChars":31,"textLines":1,"bbox":[85,241,710,48]}
+{"kind":"textbox","id":"sh/gzyts3u9","slide":7,"text":"4.523 atualizações do otimizador, sem ajuste no holdout","textPreview":"4.523 atualizações do otimizador, sem ajuste no holdout","textChars":55,"textLines":1,"bbox":[78,348,1090,50]}
+{"kind":"textbox","id":"sh/fypszyto","slide":7,"text":"Modelo salvo e aplicado a 900 respostas de teste","textPreview":"Modelo salvo e aplicado a 900 respostas de teste","textChars":48,"textLines":1,"bbox":[78,422,1090,50]}
+{"kind":"textbox","id":"sh/exwrqtc3","slide":7,"text":"900 rótulos preenchidos em test1_predito.xlsx","textPreview":"900 rótulos preenchidos em test1_predito.xlsx","textChars":45,"textLines":1,"bbox":[78,496,1090,50]}
+{"kind":"textbox","id":"sh/lwradsby","slide":7,"text":"Acurácia de teste: indisponível sem gabarito","textPreview":"Acurácia de teste: indisponível sem gabarito","textChars":44,"textLines":1,"bbox":[78,566,1090,50]}
+{"kind":"notes","id":"nt/t6nrd8","slide":7,"text":"Fontes: reports/etapa6_final.md e reports/etapa7_inferencia.md. O checkpoint final inclui as linhas antes usadas no holdout; não atribuir a ele a métrica da auditoria."}
+{"kind":"slide","id":"sl/vk02eu","slide":8,"title":"Conclusões e reprodução","textShapes":8}
+{"kind":"textbox","id":"sh/3ih0ryps","slide":8,"text":"Conclusões e reprodução","textPreview":"Conclusões e reprodução","textChars":23,"textLines":1,"bbox":[64,45,1150,82]}
+{"kind":"textbox","id":"sh/oja1036d","slide":8,"text":"8 / 8","textPreview":"8 / 8","textChars":5,"textLines":1,"bbox":[1150,654,65,25]}
+{"kind":"textbox","id":"sh/p4jit87i","slide":8,"text":"BERTimbau foi o escolhido pela regra de acurácia prévia.","textPreview":"BERTimbau foi o escolhido pela regra de acurácia prévia.","textChars":56,"textLines":1,"bbox":[78,154,1090,50]}
+{"kind":"textbox","id":"sh/ed8zutov","slide":8,"text":"A diferença para TF-IDF no holdout é pequena.","textPreview":"A diferença para TF-IDF no holdout é pequena.","textChars":45,"textLines":1,"bbox":[78,230,1090,50]}
+{"kind":"textbox","id":"sh/feh0nypg","slide":8,"text":"O recall de c234 foi 24,131%: principal limitação.","textPreview":"O recall de c234 foi 24,131%: principal limitação.","textChars":50,"textLines":1,"bbox":[78,306,1090,50]}
+{"kind":"textbox","id":"sh/gfqhw361","slide":8,"text":"Código e configuração","textPreview":"Código e configuração","textChars":21,"textLines":1,"bbox":[80,408,680,47]}
+{"kind":"textbox","id":"sh/1gzipo7m","slide":8,"text":"github.com/Zennitte/ep1-claridade-esic-bertimbau","textPreview":"github.com/Zennitte/ep1-claridade-esic-bertimbau","textChars":48,"textLines":1,"bbox":[80,461,1080,51]}
+{"kind":"textbox","id":"sh/y9sj6dof","slide":8,"text":"Relatório no Google Docs; apresentação em Google Slides","textPreview":"Relatório no Google Docs; apresentação em Google Slides","textChars":55,"textLines":1,"bbox":[78,561,1090,50]}
+{"kind":"notes","id":"nt/vk02eu","slide":8,"text":"Fontes: relatórios das etapas 5f, 6 e 7. Para reproduzir, consultar o README do repositório, obter os dados pelo canal autorizado e usar GPU ROCm compatível."}
