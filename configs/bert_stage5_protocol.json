@@ -1,0 +1,43 @@
+{
+  "stage": 5,
+  "protocol_version": "stage5_common_v1",
+  "split_id": "grouped_v1_seed_20260924",
+  "folds": [1, 2, 3],
+  "finalists": [
+    "start512_lr2e5",
+    "headtail256_lr2e5"
+  ],
+  "full_fold": true,
+  "seed": 20260924,
+  "max_epochs": 2,
+  "micro_batch_size": 2,
+  "gradient_accumulation_steps": 4,
+  "effective_batch_size": 8,
+  "eval_every_optimizer_steps": 384,
+  "evaluate_at_epoch_end": true,
+  "early_stopping_min_steps": 512,
+  "early_stopping_patience_evaluations": 3,
+  "early_stopping_patience_counting": "only evaluations at or after early_stopping_min_steps",
+  "checkpoint_selection": {
+    "primary": "validation_accuracy",
+    "tie_breaker": "validation_macro_f1"
+  },
+  "tfidf_comparison": {
+    "c": 0.5,
+    "source": "runs/etapa2/baseline_20260924_1724/metrics.json",
+    "same_fold_validation": true
+  },
+  "epoch_boundary_accumulation": "discard incomplete gradient-accumulation group at epoch end; never carry gradients between epochs",
+  "expected_optimizer_steps_per_epoch": {
+    "fold_1": 1436,
+    "fold_2": 1431,
+    "fold_3": 1399
+  },
+  "holdout_evaluated": false,
+  "notes": [
+    "Each finalist receives the same maximum training duration on each fold; early stopping may shorten an individual run based only on that fold's validation metrics.",
+    "Validation runs over the complete fold validation split at each scheduled evaluation and epoch boundary.",
+    "The preliminary fold-1 run in subdivision 5a stopped at step 896 (0.624 epoch) and is not a comparable full-fold confirmation; rerun it under this protocol in 5c.",
+    "The holdout remains untouched until the candidate and training policy have been fixed after fold confirmation."
+  ]
+}

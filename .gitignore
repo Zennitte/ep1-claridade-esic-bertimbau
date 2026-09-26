@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+train.xlsx
+test*.xlsx
+models/
+runs/
+data/
+outputs/
+reports/
+tmp/
+plan.md
+*.pdf
+*.xlsx

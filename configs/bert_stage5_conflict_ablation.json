@@ -1,0 +1,207 @@
+{
+  "stage": 5,
+  "subdivision": "5c.1",
+  "status": "completed",
+  "protocol_version": "stage5_conflict_ablation_v1",
+  "depends_on": "5c complete; reference BERT candidate selected and frozen; explicit authorization required for 5c.1",
+  "source": {
+    "path": "train.xlsx",
+    "sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818"
+  },
+  "split": {
+    "path": "data/splits_grouped_v1.json",
+    "id": "grouped_v1_seed_20260924",
+    "sha256": "aa9c99a79ccccc3655399761c53098f5fd3d770c9aa6c8b68be29c49eba3586b",
+    "initial_fold": 1,
+    "train_rows": 11488,
+    "validation_rows": 5580,
+    "validation_indices_policy": "exactly the original fold-1 validation indices for A, B and C",
+    "holdout_policy": "untouched until stage 5f"
+  },
+  "row_manifest": {
+    "path": "data/row_manifest.csv",
+    "sha256": "e07917a05f89f9940d6194d118fed7ebce9b9342acfc956eb38cadfd4dc2a2c4",
+    "index_column": "row_index",
+    "group_column": "group_sha256",
+    "label_column": "clarity"
+  },
+  "grouping": {
+    "version": "grouped_v1_seed_20260924",
+    "normalization": "Unicode NFC, casefold, split/join all whitespace",
+    "group_id": "SHA-256 of normalized UTF-8 text",
+    "source_function": "src/audit_and_split.py::group_text and group_id",
+    "near_duplicates": false
+  },
+  "reference_model": {
+    "candidate_id": "start512_lr2e5",
+    "selected_by": "fold-1 validation accuracy: 0.4514336917562724 vs 0.44802867383512546 for headtail256_lr2e5",
+    "control_run_id": "etapa5c_start512_lr2e5_fold1_20260924_2359_unsandboxed",
+    "pretrained_model_id": "neuralmind/bert-base-portuguese-cased",
+    "tokenizer_id": "neuralmind/bert-base-portuguese-cased",
+    "representation": "start",
+    "max_length": 512,
+    "learning_rate": 2e-5,
+    "control_software_versions": {
+      "torch": "2.13.0+rocm10.0.0",
+      "transformers": "4.56.2",
+      "tokenizers": "0.22.1",
+      "openpyxl": "3.1.5"
+    },
+    "select_after_5c": "highest fold-1 validation accuracy, macro-F1 breaks an exact accuracy tie",
+    "existing_control_if_start512": "runs/etapa5/etapa5c_start512_lr2e5_fold1_20260924_2359_unsandboxed/metrics.json",
+    "reuse_A_only_if_exactly_comparable": true,
+    "comparison_fields": [
+      "source_sha256",
+      "split_sha256",
+      "fold and full train/validation indices",
+      "candidate representation/max_length/learning_rate",
+      "pretrained model and tokenizer",
+      "seed and optimizer settings",
+      "max_epochs and evaluation/early-stopping protocol",
+      "training loop, preprocessing and software versions"
+    ]
+  },
+  "fixed_training_protocol": {
+    "source_config": "configs/bert_stage4.json",
+    "stage5_protocol": "configs/bert_stage5_protocol.json",
+    "seed": 20260924,
+    "max_epochs": 2,
+    "micro_batch_size": 2,
+    "gradient_accumulation_steps": 4,
+    "effective_batch_size": 8,
+    "weight_decay": 0.01,
+    "optimizer": "AdamW",
+    "scheduler": "none",
+    "warmup_steps": 0,
+    "eval_every_optimizer_steps": 384,
+    "evaluate_at_epoch_end": true,
+    "early_stopping_min_steps": 512,
+    "early_stopping_patience_evaluations": 3,
+    "checkpoint_primary": "validation_accuracy",
+    "checkpoint_tiebreaker": "validation_macro_f1",
+    "incomplete_accumulation_at_epoch_end": "discard, as in stage 5b"
+  },
+  "variants": [
+    {
+      "id": "A_original",
+      "rule": "retain every original fold-training index and label",
+      "planned_manifest": "data/stage5_conflict_ablation/fold1_original.json"
+    },
+    {
+      "id": "B_remove_conflicts",
+      "rule": "remove every training instance from a group with more than one original label",
+      "planned_manifest": "data/stage5_conflict_ablation/fold1_remove_conflicts.json"
+    },
+    {
+      "id": "C_majority_conflicts",
+      "rule": "for a uniquely most frequent original label, retain only instances already bearing that label; remove entire tied groups; never relabel",
+      "planned_manifest": "data/stage5_conflict_ablation/fold1_majority_conflicts.json"
+    }
+  ],
+  "read_only_fold1_projection": {
+    "conflicting_train_groups": 169,
+    "conflicting_train_rows": 1223,
+    "unique_majority_groups": 92,
+    "tied_groups": 77,
+    "A_original": {
+      "rows": 11488,
+      "optimizer_steps_per_epoch_before_early_stopping": 1436,
+      "batch_remainder_rows_per_epoch": 0,
+      "class_counts": {"c1": 3637, "c234": 3927, "c5": 3924}
+    },
+    "B_remove_conflicts": {
+      "rows": 10265,
+      "removed": 1223,
+      "optimizer_steps_per_epoch_before_early_stopping": 1283,
+      "batch_remainder_rows_per_epoch": 1,
+      "class_counts": {"c1": 3141, "c234": 3537, "c5": 3587}
+    },
+    "C_majority_conflicts": {
+      "rows": 10806,
+      "removed": 682,
+      "optimizer_steps_per_epoch_before_early_stopping": 1350,
+      "batch_remainder_rows_per_epoch": 6,
+      "class_counts": {"c1": 3447, "c234": 3645, "c5": 3714}
+    }
+  },
+  "reporting": {
+    "path": "reports/etapa5_conflict_ablation.md",
+    "metrics": [
+      "accuracy",
+      "macro_f1",
+      "weighted_f1",
+      "precision_by_class",
+      "recall_by_class",
+      "f1_by_class",
+      "confusion_matrix",
+      "train_loss",
+      "validation_loss",
+      "best_step",
+      "epochs_completed",
+      "stop_reason",
+      "wall_seconds",
+      "gpu_peak_bytes"
+    ],
+    "deltas_against_A": ["accuracy", "macro_f1", "weighted_f1"],
+    "metric_derivation": "derive all classification metrics from the stored full-validation confusion matrix with zero_division=0; verify accuracy/macro-F1 against the recorded values"
+  },
+  "preflight_assertions_required_before_gpu": true,
+  "preflight_result": {
+    "status": "passed",
+    "script": "src/prepare_stage5_conflict_ablation.py",
+    "rerun_validate_only_after_manifest_creation": true,
+    "source_sha256": "0e9219233664ac675fc47982bbc822acd3bb15d67fb7bfc26b67bec047e46818",
+    "split_sha256": "aa9c99a79ccccc3655399761c53098f5fd3d770c9aa6c8b68be29c49eba3586b",
+    "row_manifest_sha256": "e07917a05f89f9940d6194d118fed7ebce9b9342acfc956eb38cadfd4dc2a2c4",
+    "train_validation_group_overlap": 0,
+    "holdout_evaluated": false
+  },
+  "control_a_reuse": {
+    "reused": true,
+    "run_id": "etapa5c_start512_lr2e5_fold1_20260924_2359_unsandboxed",
+    "metrics_path": "runs/etapa5/etapa5c_start512_lr2e5_fold1_20260924_2359_unsandboxed/metrics.json",
+    "checkpoint_path": "models/bert_stage5/etapa5c_start512_lr2e5_fold1_20260924_2359_unsandboxed/best",
+    "manifest_sha256": "19cb9a359a6ba2cc5995629c180a5ea6e64287e719126e202c2f315ec2a320c5",
+    "equivalence": "same source and split hashes; full_fold=true; exact fold-1 train/validation indices and order; reference candidate/model/tokenizer/seed/optimizer/batch/accumulation/evaluation/early-stopping/checkpoint-selection settings and software versions match 5b; manifest loader extension is outside the unchanged training loop; stored checkpoint reloaded with finite [5,3] logits"
+  },
+  "variant_run_records": {
+    "A_original": {
+      "run_id": "etapa5c_start512_lr2e5_fold1_20260924_2359_unsandboxed",
+      "metrics_path": "runs/etapa5/etapa5c_start512_lr2e5_fold1_20260924_2359_unsandboxed/metrics.json",
+      "best_step": 2688,
+      "accuracy": 0.4514336917562724,
+      "macro_f1": 0.44507214860372296,
+      "weighted_f1": 0.4447870533108227,
+      "elapsed_seconds": 4241.518,
+      "checkpoint_reload_finite_logits": true
+    },
+    "B_remove_conflicts": {
+      "run_id": "etapa5c1_B_remove_conflicts_fold1_20260925",
+      "metrics_path": "runs/etapa5/etapa5c1_B_remove_conflicts_fold1_20260925/metrics.json",
+      "manifest_sha256": "ed567c07bc1188e7a9750cddb19da655693fed11cc8103492294a4838200c8df",
+      "best_step": 2304,
+      "accuracy": 0.45089605734767024,
+      "macro_f1": 0.442548553657282,
+      "weighted_f1": 0.4413653493022681,
+      "elapsed_seconds": 3777.5,
+      "completed_epochs": 2.0,
+      "early_stopped": false,
+      "checkpoint_reload_finite_logits": true
+    },
+    "C_majority_conflicts": {
+      "run_id": "etapa5c1_C_majority_conflicts_fold1_20260925",
+      "metrics_path": "runs/etapa5/etapa5c1_C_majority_conflicts_fold1_20260925/metrics.json",
+      "manifest_sha256": "c331233c4fc9674c5b4b56126e227f0e688926e8fb52fec11ecbf729f91caee3",
+      "best_step": 1536,
+      "accuracy": 0.44946236559139785,
+      "macro_f1": 0.44665722910104044,
+      "weighted_f1": 0.4460968130869116,
+      "elapsed_seconds": 3852.024,
+      "completed_epochs": 1.991111111111111,
+      "early_stopped": true,
+      "checkpoint_reload_finite_logits": true
+    }
+  },
+  "post_fold1_decision": "Original A remains selected: B and C both have lower fold-1 validation accuracy than A. C has higher macro-F1 but accuracy is primary and macro-F1 only breaks exact accuracy ties. Continue with Original policy in 5d; do not carry B/C as alternatives.",
+  "holdout_evaluated": false
+}

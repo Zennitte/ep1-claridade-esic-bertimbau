@@ -1,0 +1,26 @@
+{
+  "model_id": "neuralmind/bert-base-portuguese-cased",
+  "split_id": "grouped_v1_seed_20260924",
+  "seed": 20260924,
+  "fold": 1,
+  "labels": ["c1", "c234", "c5"],
+  "train_rows": 4096,
+  "validation_rows": 1024,
+  "max_epochs": 2,
+  "micro_batch_size": 2,
+  "gradient_accumulation_steps": 4,
+  "weight_decay": 0.01,
+  "eval_every_optimizer_steps": 128,
+  "early_stopping_min_steps": 512,
+  "early_stopping_patience_evaluations": 3,
+  "candidates": [
+    {"id": "start256_lr2e5", "representation": "start", "max_length": 256, "learning_rate": 2e-5, "hypothesis": "Referência para a triagem, mantendo a janela e a taxa da Etapa 3."},
+    {"id": "headtail256_lr2e5", "representation": "head_tail", "max_length": 256, "learning_rate": 2e-5, "hypothesis": "O fim da resposta pode conter a informação decisiva omitida pelo truncamento inicial."},
+    {"id": "start512_lr2e5", "representation": "start", "max_length": 512, "learning_rate": 2e-5, "hypothesis": "Uma janela maior preserva mais respostas sem truncamento, a custo de tempo e memória."},
+    {"id": "start256_lr3e5", "representation": "start", "max_length": 256, "learning_rate": 3e-5, "hypothesis": "Uma taxa um pouco maior pode acelerar o aprendizado observado como lento na Etapa 3."},
+    {"id": "headtail256_lr3e5", "representation": "head_tail", "max_length": 256, "learning_rate": 3e-5, "hypothesis": "Verifica se a taxa maior também melhora a representação início + fim na janela de 256 tokens."},
+    {"id": "headtail512_lr2e5", "representation": "head_tail", "max_length": 512, "learning_rate": 2e-5, "hypothesis": "Verifica se início + fim aproveita a janela de 512 tokens melhor que o truncamento inicial."},
+    {"id": "start512_lr3e5", "representation": "start", "max_length": 512, "learning_rate": 3e-5, "hypothesis": "Verifica a interação da taxa maior com a janela inicial de 512 tokens."},
+    {"id": "headtail512_lr3e5", "representation": "head_tail", "max_length": 512, "learning_rate": 3e-5, "hypothesis": "Completa a comparação entre representação, comprimento e taxa de aprendizado."}
+  ]
+}

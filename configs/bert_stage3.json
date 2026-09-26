@@ -1,0 +1,18 @@
+{
+  "model_id": "neuralmind/bert-base-portuguese-cased",
+  "seed": 20260924,
+  "split_id": "grouped_v1_seed_20260924",
+  "fold": 1,
+  "labels": ["c1", "c234", "c5"],
+  "max_length": 256,
+  "micro_batch_size": 2,
+  "gradient_accumulation_steps": 4,
+  "learning_rate": 2e-5,
+  "weight_decay": 0.01,
+  "benchmark_micro_batches": 12,
+  "short_train_rows": 1024,
+  "short_validation_rows": 512,
+  "short_optimizer_steps": 128,
+  "eval_every_optimizer_steps": 32,
+  "early_stopping_patience_evaluations": 2
+}

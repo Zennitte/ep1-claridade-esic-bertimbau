@@ -1,0 +1,15 @@
+{
+  "stage": 5,
+  "split_id": "grouped_v1_seed_20260924",
+  "seed": 20260924,
+  "candidate_id": "start512_lr2e5",
+  "fold": 1,
+  "full_fold": true,
+  "train_rows": 11488,
+  "validation_rows": 5580,
+  "max_optimizer_steps": 896,
+  "eval_every_optimizer_steps": 384,
+  "selection_metric": "validation_accuracy",
+  "holdout_evaluated": false,
+  "session_scope": "one candidate-fold case today; confirm both finalists on folds 2 and 3 even if completion exceeds tomorrow's four-hour window"
+}
